@@ -11,3 +11,4 @@ int main()
 	printf("i=%ld\n,c=%ld\n",i,c);
 	}
 }
+//add some comments
