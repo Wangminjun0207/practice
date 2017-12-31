@@ -1,39 +1,38 @@
-#include<stdio.h>
-#include<string.h>
-void multiply(char a[],char b[],char c[])
+#include <stdio.h>
+#include <string.h>
+#define MAX 10001
+int fun(int *sum,int *a,int *b,int la,int lb)
 {
-	int i,j,m,n,sum,t;
-	m=strlen(a);
-	n=strlen(b);
-	for(i=0;i<m;i++)
-		a[i]-='0';
-	for(j=0;j<n;j++)
-		b[j]-='0';
-	c[m+n]='\0';
-	for(i=m+n-1;i>=0;i--)
+	int i,j,lsum = 0 ;
+	for(i=1 ; i<= la ; i++) 
+	for(j=1,lsum=i-1; j<= lb ; j++)
+			sum[++lsum] += b[j] * a[i] ;
+	for(i=1 ; i<= lsum ; i++)
+	if (sum[i] >= 10)
 	{
-		for(int k=n-1;k>=0;k--)
-		{
-			t=0;
-			for(int p=m-1;p>=0;p--)
-			{
-				sum=0;
-				sum=a[p]*b[k];
-				c[i]=((c[i]+sum+t)%10+'0');
-				t=sum/10;
-				i--;
-			}
-		}
+		if ( sum[lsum] >= 10)
+			lsum ++ ;
+		sum[i+1] += sum[i] / 10 ;
+	sum[i] %= 10 ;
 	}
+	return lsum ;
 }
-int main()
+int main(void)
 {
-	char a[100];
-	char b[100];
-	char c[200]; 
-	gets(a);
-	gets(b);
-	multiply(a,b,c);
-	puts(c);
-	return 0;
- } 
+	int a[MAX]={0},b[MAX]={0},sum[MAX*2]={0} ;
+	int la=0,lb=0,lsum=0;
+	int i,j ;
+	char sa[MAX],sb[MAX] ;
+	scanf("%s %s",sa,sb);
+	la = strlen(sa);
+	lb = strlen(sb);
+	for(i=1,j=la-1; i<= la ; i++,j--)
+		a[i] = sa[j] - '0' ;
+	for(i=1,j=lb-1; i<= lb ; i++,j--)
+		b[i] = sb[j] - '0' ;
+	lsum = fun(sum,a,b,la,lb) ;
+	for(i=lsum ; i> 0 ; i--)
+		printf("%d",sum[i]);
+	printf("\n");
+	return 0 ;
+}
