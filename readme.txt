@@ -17,5 +17,7 @@
 15.Input'N'printSum			  输入N求和
 16.LeapYear				  判断是否为闰年
 17.CirculationExample
-18.ArraySample				  找出最大元素放中间，四个小的元素放四个角落			  
+18.ArraySample				  找出最大元素放中间，四个小的元素放四个角落、
+19.AboutSeven				  不能被七整除，并且每个位上没有七
+
 
