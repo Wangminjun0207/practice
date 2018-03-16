@@ -11,9 +11,9 @@
 是因为在一般的命名规范里，整型变量用n或者i开始，长整型用l开始，指针用p开始，字符用b开始，而字符串用str开始，数组是用Arr开头的，养成这个习惯 
 
 *************************************************/
-int money=1000;    //g_nMoney
-char b[6]={'1','2','3','4','5','6'};  //g_bArr
-int time=0;        //g_iTime或者g_nTime. 
+int g_nMoney=1000;    //g_nMoney
+char g_bArr[6]={'1','2','3','4','5','6'};  //g_bArr
+int g_nTime=0;        //g_iTime或者g_nTime. 
 
 /************************************************
 这里定义的全局函数，需要声明，做法也没有问题，不过不应该用这么多的void类型，记住，void是万不利己不要用，你一般用int类型，在函数执行成功后， return 0,不成功return一个值，比如-1，-10001，-10002等等，这样就知道是哪里出错了。
@@ -42,13 +42,13 @@ int UserLogin()
 
  
 
-void login();
-void jiemian();
-void savemoney();
-void getmoney();
-void query();
-void Return();
-void login()
+int Login();
+int Interface();
+int Savemoney();
+int Getmoney();
+int Query();
+int Return();
+int Login()
 {
 	char a[20];
 	int i=0,n=1,k;
@@ -64,19 +64,19 @@ void login()
 			printf("*");
 		}
 		for(k=0;k<6;k++)
-			if(a[k]!=b[k])
+			if(a[k]!=g_bArr[k])
 				break;
 			if(k==6)
 			{
 				printf("\n密码正确，请继续！\n");
-				jiemian();
+				Interface();
 			}
 			else
 				{
 					system("cls");
 					printf("\n密码错误，请重新输入！\n");
-					time++;
-					if(time==3)
+					g_nTime++;
+					if(g_nTime==3)
 					{
 						system("cls");
 						printf("\n\n\t\t\t\t\t由于密码错误次数过多，您的账户已锁定！\n\n\n\n\n\n");
@@ -88,8 +88,9 @@ void login()
 				} 
 			exit(1);
 	}
+	return 0;
 }
-void jiemian()
+int Interface()
 {
 	int selectkey;
 	system("cls");
@@ -106,50 +107,51 @@ void jiemian()
 		scanf("%d",&selectkey);
 		switch(selectkey)
 		{
-		case 1:printf("\t\t\t\t\t\t\n查询功能\n");query();break;
-		case 2:printf("\t\t\t\t\t\t\n取款功能\n");getmoney();break;
-		case 3:printf("\t\t\t\t\t\t\n存款功能\n");savemoney();break;
+		case 1:printf("\t\t\t\t\t\t\n查询功能\n");Query();break;
+		case 2:printf("\t\t\t\t\t\t\n取款功能\n");Getmoney();break;
+		case 3:printf("\t\t\t\t\t\t\n存款功能\n");Savemoney();break;
 		case 4:printf("\t\t\t\t\t\t\n退出功能\n");Return();break;
 		}
 	}
+	return 0;
 }
-void query()
+int Query()
 {
 	system("cls");
-	printf("\n\t\t\t\t\t\t您的账户余额为%d\n",money);
+	printf("\n\t\t\t\t\t\t您的账户余额为%d\n",g_nMoney);
 	system("pause");
-	return;
+	return 0;
 }
-void getmoney()
+int Getmoney()
 {
 	system("cls");
 	int m;
 	loop:
 	printf("\n\t\t\t\t\t\t请输入要取的金额：");
 	scanf("%d",&m);
-	if(m<=money)
+	if(m<=g_nMoney)
 	{
-		money=money-m;
-		printf("\t\t\t\t\t\t您的账户余额为：%d\n",money);
+		g_nMoney=g_nMoney-m;
+		printf("\t\t\t\t\t\t您的账户余额为：%d\n",g_nMoney);
 	}
 	else
 	{
 		printf("\t\t\t\t\t\t您的账户余额不足，请重新输入!\n");
 		goto loop;
 	}
-	return;
+	return 0;
 }
-void savemoney()
+int Savemoney()
 {
 	system("cls");
 	int m;
 	printf("\n\t\t\t\t\t\t请输入您要存入的金额：");
 	scanf("%d",&m);
-	money=money+m;
-	printf("\t\t\t\t\t\t您的账户余额为：%d\n",money);
-	return;
+	g_nMoney=g_nMoney+m;
+	printf("\t\t\t\t\t\t您的账户余额为：%d\n",g_nMoney);
+	return 0;
 }
-void Return()
+int Return()
 {
 	system("cls");
 	puts("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t=======================" );
@@ -159,6 +161,7 @@ void Return()
 }
 int main()
 {
-	login();
+	Login();
+	return 0;
 }
 
