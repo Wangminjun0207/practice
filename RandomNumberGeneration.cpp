@@ -8,11 +8,11 @@ int main(int args,char *argv[])
 	int n,i,Max,Min,flag=0;
 	int *arr;
 	srand(time(0)) ;
-	printf("输入抽奖的人数：");
+	printf("\t\t\t输入抽奖的人数：");
 	scanf("%d",&n);
-	printf("输入随机数的下界Min：");
+	printf("\t\t\t输入随机数的下界Min：");
 	scanf("%d",&Min);
-	printf("输入随机数的上界Max：");
+	printf("\t\t\t输入随机数的上界Max：");
 	scanf("%d",&Max);
 	arr=(int *)malloc(n*sizeof(int));
 	system("cls");
@@ -21,19 +21,33 @@ int main(int args,char *argv[])
 		for(i=0;i<n;i++)
 		{
 			arr[i]=rand()%(Max-Min+1)+Min;
-			printf("p%d,his number is %d\n",i,arr[i]);
+			printf("\t\tp%d,his number is %d\n",i+1,arr[i]);
 	 	} 
 		g_nNumber=rand()%(Max-Min+1)+Min;
 		puts("Press any key to draw lottry...");
 		system("pause");
-		system("cls");
+		//system("cls");
 		for(i=0;i<n;i++)
 		if(arr[i]==g_nNumber)
 		{
-			printf("The winter is : p%d,his number is %d\n",i,arr[i]);
+			printf("\t\tThe winter is : p%d,his number is %d\n",i+1,arr[i]);
 			flag++;
 		}
+		if(flag==0)
+		{
+			puts("\t\t============================================");
+			printf("\t\tNo one wins,the valid lottery number is : %d\n",g_nNumber);
+			puts("\t\t============================================");
+		}
+		else
+		{
+			puts("\t\t===================================");
+			printf("\t\t The valid lottery number is : %d\n",g_nNumber);
+			puts("\t\t===================================");
+		}
+		system("pause");
+		system("cls");
 	}while(flag==0);
-	printf("The valid loottery number is : %d\n",g_nNumber);
 	return 0;
 }
+
