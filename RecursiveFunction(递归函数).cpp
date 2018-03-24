@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	return 0;
 } 
 /*******************************************
-主涵数可以用以下代码替换 :
+涓诲嚱鏁板彲浠ョ敤浠ヤ笅浠ｇ爜鏇挎崲 :
 int main(int argc, char *argv[])
 {
 	int m,k;
@@ -43,7 +43,7 @@ long Fact(int a)
 	return result;
 }
 /***********************************************
-利用函数的递归求组合数，也可以利用一下代码替换：
+鍒╃敤鍑芥暟鐨勯�掑綊姹傜粍鍚堟暟锛屼篃鍙互鍒╃敤涓�涓嬩唬鐮佹浛鎹細
  long Fact(int a)
 {
 	long result=1;
@@ -51,5 +51,5 @@ long Fact(int a)
     result = result * i;
 	return result;
 }
-迭代也完全可以实现阶乘计算的功能 
+杩唬涔熷畬鍏ㄥ彲浠ュ疄鐜伴樁涔樿绠楃殑鍔熻兘 
 ************************************************/ 
