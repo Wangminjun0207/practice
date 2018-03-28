@@ -17,7 +17,7 @@ float func(int n)
 			}	
 		}
 		if(flag == 1)
-			result = result + sqrt((float)i);
+			result = result + sqrt((float)i);//此步骤有问题 
 		//printf("result = %f\n",sqrt(i));
 		flag = 1;
 	}
