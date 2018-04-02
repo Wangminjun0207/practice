@@ -23,10 +23,11 @@ float func(int n)
 	}
 	return result;
 }
+
 int main()
 {
 	int n;
-	printf("Input anumber :");
+	printf("Input a number :");
 	scanf("%d",&n);
 	printf("result = %f\n",func(n));
 	return 0;

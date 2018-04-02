@@ -24,6 +24,8 @@ int main(int argc, char *argv[])
 	}
 	printf("\n请输入你要插入的数字（100~10000）：");
 	scanf("%d",&g_nX);
+	do{
+	system("cls");
 	Interface();
 	scanf("%d",&n);
 	switch(n){
@@ -39,7 +41,9 @@ int main(int argc, char *argv[])
 		if((i+1)%10 == 0)
 		printf("\n");
 	}
-	printf("\n"); 
+	printf("\n");
+	system("pause");
+	}while(n==1 || n==2);
 	return 0;
 }
 
