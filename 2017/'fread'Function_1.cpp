@@ -14,7 +14,6 @@ int main()
 	if((fp=fopen("C:\\file_date.txt","rb"))==NULL)
 	{
 		printf("can not open the file!\n");
-		exit(0);
 	}
 	for(i=0;i<2;i++)
 	{
