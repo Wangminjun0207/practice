@@ -1,113 +1,24 @@
-¾í DATA µÄÎÄ¼ş¼Ğ PATH ÁĞ±í
-¾íĞòÁĞºÅÎª 58F3-E425
-E:.
-©¦  'fread'Function_1.cpp
-©¦  'fwrite'Function_1.cpp
-©¦  .gitignore
-©¦  1-100PrintDevidedNumberByTwoNO1.cpp
-©¦  1-100PrintDevidedNumberByTwoNO2.cpp
-©¦  1-200PrintDevidedNumberByFourNO2.cpp
-©¦  1-200PrintDevidedNumberByThree.cpp
-©¦  2017112381--ÍõÃô¾ü--µÚ01´Î²âÊÔÊµÑé  ¿ØÖÆÓï¾ä Ñ­»·Óë·ÖÖ§.docx
-©¦  2017112381--ÍõÃô¾ü--µÚ02´Î²âÊÔÊµÑé  Êı×éÓë×Ö·û´®.docx
-©¦  2017112381--ÍõÃô¾ü--µÚ03´Î²âÊÔÊµÑé  Êı×éÓëº¯Êı.docx
-©¦  2017112381--ÍõÃô¾ü--µÚ04´Î²âÊÔÊµÑé  Ö¸ÕëÓë×Ö·û´®¡¢½á¹¹Ìå.docx
-©¦  2017112381--ÍõÃô¾ü--µÚ05´Î²âÊÔÊµÑé  Ö¸ÕëÓë×Ö·û´®¡¢½á¹¹Ìå.docx
-©¦  20171221Practice.cpp
-©¦  AboutSeven.cpp
-©¦  AboutSeven.exe
-©¦  AddOneToHundred'For'Circulation.cpp
-©¦  AllDaffodilNumber.cpp
-©¦  Area.cpp
-©¦  ArrayPractice.cpp
-©¦  ArraySample.cpp
-©¦  ArraySample.exe
-©¦  ATM.cpp
-©¦  ATM.exe
-©¦  BubblingSortArray.cpp
-©¦  CalculateNO.1.cpp
-©¦  Calculator.cpp
-©¦  CAndPoingter.cpp
-©¦  CAndPoingter.exe
-©¦  ChangeArrayLength.cpp
-©¦  ChangeArrayLength.exe
-©¦  CirculationExample.cpp
-©¦  ClassPractice.cpp
-©¦  ClassPractice.exe
-©¦  CopyString.cpp
-©¦  CopyString.exe
-©¦  CountTime.cpp
-©¦  CustomDateType.cpp
-©¦  CustomDateTypeNO.1.cpp
-©¦  Distance(int ,float).cpp
-©¦  FibFunction(classPractice).cpp
-©¦  FibFunction(classPractice).exe
-©¦  FileFunction.cpp
-©¦  FindLongestWord.cpp
-©¦  FindLongestWord.exe
-©¦  FindMaxAndMinValue.cpp
-©¦  FunctionExampleNO.1.cpp
-©¦  FunctionExampleNO.2.cpp
-©¦  FunctionExampleNO.3.cpp
-©¦  FunctionReturnValue.cpp
-©¦  GuessNumberGame.cpp
-©¦  GuessNumberGame.exe
-©¦  HexadecimalConversion.cpp
-©¦  HexadecimalConversion.exe
-©¦  HexadecimalConversion_1.cpp
-©¦  HexadecimalConversion_1.exe
-©¦  InfermationManagementSystem.cpp
-©¦  InfermationManagementSystem.exe
-©¦  Input'N'printSum.cpp
-©¦  LeapYear.cpp
-©¦  LinkCreateDelAdd.cpp
-©¦  LinkPractice.cpp
-©¦  MoveArray.cpp
-©¦  MoveArray.exe
-©¦  OOP_1.cpp
-©¦  OOP_1.exe
-©¦  PassParameter.cpp
-©¦  PrimeNumber.cpp
-©¦  PrimeNumberSum.cpp
-©¦  PrimeNumberSum.exe
-©¦  PrintArrayColumn.cpp
-©¦  PrintArrayLine.cpp
-©¦  PrintFibonacciArray.cpp
-©¦  QuickSort.cpp
-©¦  QuickSort.exe
-©¦  RandomNumberGeneration.cpp
-©¦  RandomNumberGeneration.exe
-©¦  readme.txt
-©¦  RecursiveFunction(µİ¹éº¯Êı).cpp
-©¦  RecursiveFunction(µİ¹éº¯Êı).exe
-©¦  reversePrintArray.cpp
-©¦  SaddlePoint.cpp
-©¦  ScoreClassificationNO1.cpp
-©¦  socoreClassificatiion1.cpp
-©¦  SortArray.cpp
-©¦  SortAverageInputOutputMinMaxFunction.cpp
-©¦  SortString.cpp
-©¦  SortString.exe
-©¦  sqrt.cpp
-©¦  StatisticsLetterAndNumber.cpp
-©¦  StatisticsLetterAndNumberNO.2.cpp
-©¦  Substring(×Ó×Ö·û´®).cpp
-©¦  Substring(×Ó×Ö·û´®).exe
-©¦  Swap_a,b,c.cpp
-©¦  testFour.cpp
-©¦  TheTimer.cpp
-©¦  TranslateNumberToChinese.cpp
-©¦  wangmingjun.cpp
-©¦  wmj.cpp
-©¦  ¡®for¡¯Circulation.cpp
-©¦  ¡®for¡¯Circulation.exe
-©¦  ÊµÑé.cpp
-©¦  ÊµÑé.exe
-©¦  ¼ÆËã»ú¶ş¼¶ÊÔÌâ.cpp
-©¦  ¼ÆËã»ú¶ş¼¶ÊÔÌâ.exe
-©¦  
-©À©¤201804
-©À©¤201805
-©¸©¤Á·Ï°Ìâ
-        Ï°Ìâ20171221.txt
-        
+ï»¿ç»ƒä¹ è¯´æ˜ï¼š
+æ–‡ä»¶å                                    ä»£ç åŠŸèƒ½
+1.wangmingjun.cpp                         è¿™é‡Œä¸€ä¸ªåˆå§‹åŒ–gitæ—¶å€™ç”¨çš„ç»ƒä¹ æ–‡ä»¶ï¼Œä¸é‡è¦ã€‚
+2.wmj.cpp                                 ç¬¬äºŒæ¬¡ç»ƒä¹ gitç”¨çš„ä»£ç ï¼Œä¸é‡è¦ã€‚
+3.1-100PrintDevidedNumberByTwoNO1         è¾“å‡º1-100èƒ½è¢«2æ•´é™¤çš„æ•°
+4.1-100PrintDevidedNumberByTwoNO2         è¾“å‡º1-100èƒ½è¢«2æ•´é™¤çš„æ•°
+5.1-200PrintDevidedNumberByFourNO2        è¾“å‡º1-200èƒ½è¢«4æ•´é™¤çš„æ•°
+6.1-200PrintDevidedNumberByThree	  è¾“å‡º1-200èƒ½è¢«3æ•´é™¤çš„æ•°
+7.AddOneToHundred'For'Circulation         1-100forå¾ªç¯ç›¸åŠ 
+8.CalculateNO.1				  è®¡ç®—å™¨1
+9.Calculator				  è®¡ç®—å™¨
+10.FindMaxAndMinValue			  æ‰¾å‡ºæœ€å¤§å€¼å’Œæœ€å°å€¼
+11.FunctionExampleNO.1			  å‡½æ•°ä¾‹å­1
+12.FunctionExampleNO.2		 	  å‡½æ•°ä¾‹å­2
+13.FunctionExampleNO.3			  å‡½æ•°ä¾‹å­3
+14.FunctionReturnValue			  è¿”å›å‡½æ•°å€¼
+15.Input'N'printSum			  è¾“å…¥Næ±‚å’Œ
+16.LeapYear				  åˆ¤æ–­æ˜¯å¦ä¸ºé—°å¹´
+17.CirculationExample
+18.ArraySample				  æ‰¾å‡ºæœ€å¤§å…ƒç´ æ”¾ä¸­é—´ï¼Œå››ä¸ªå°çš„å…ƒç´ æ”¾å››ä¸ªè§’è½ã€
+19.AboutSeven				  ä¸èƒ½è¢«ä¸ƒæ•´é™¤ï¼Œå¹¶ä¸”æ¯ä¸ªä½ä¸Šæ²¡æœ‰ä¸ƒ
+20.SortAverageInputOutputMinMaxFunction	  è¾“å…¥ã€è¾“å‡ºæ•°ç»„ï¼Œæ’åºï¼Œæ±‚æœ€å¤§å€¼ï¼Œå¹³å‡å€¼ï¼Œæœ€å°å€¼
+
+
