@@ -1,5 +1,3 @@
-卷 DATA 的文件夹 PATH 列表
-卷序列号为 58F3-E425
 E:.
 │  readme.txt
 │  readme_2.txt
@@ -8,7 +6,6 @@ E:.
 │      'fread'Function_1.cpp
 │      'fread'Function_1.exe
 │      'fwrite'Function_1.cpp
-│      .gitignore
 │      1-100PrintDevidedNumberByTwoNO1.cpp
 │      1-100PrintDevidedNumberByTwoNO2.cpp
 │      1-200PrintDevidedNumberByFourNO2.cpp
