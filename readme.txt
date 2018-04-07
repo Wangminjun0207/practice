@@ -3,9 +3,9 @@ E:.
 │  readme_2.txt
 │  
 ├─2017
-│      'fread'Function_1.cpp
+│      'fread'Function_1.cpp					利用fread函数从文件读入信息
 │      'fread'Function_1.exe
-│      'fwrite'Function_1.cpp
+│      'fwrite'Function_1.cpp					利用fwrite函数给文件写入信息
 │      1-100PrintDevidedNumberByTwoNO1.cpp			输出1-100能被2整除的数
 │      1-100PrintDevidedNumberByTwoNO2.cpp			输出1-100能被2整除的数
 │      1-200PrintDevidedNumberByFourNO2.cpp			输出1-200能被4整除的数
@@ -15,13 +15,13 @@ E:.
 │      2017112381--王敏军--第03次测试实验  数组与函数.docx
 │      2017112381--王敏军--第04次测试实验  指针与字符串、结构体.docx
 │      2017112381--王敏军--第05次测试实验  指针与字符串、结构体.docx
-│      20171221Practice.cpp
+│      20171221Practice.cpp					计算两个大数的乘积
 │      20171221Practice.exe
 │      AboutSeven.cpp						不能被七整除，并且每个位上没有七
 │      AboutSeven.exe
 │      AddOneToHundred'For'Circulation.cpp			1-100for循环相加
 │      AddOneToHundred'For'Circulation.exe
-│      AllDaffodilNumber.cpp
+│      AllDaffodilNumber.cpp					判断一个数是不是水仙花数
 │      AllDaffodilNumber.exe
 │      Area.cpp
 │      Area.exe
@@ -125,6 +125,10 @@ E:.
 │      QuickSort.cpp
 │      QuickSort.exe
 │      RecursiveFunction(递归函数).cpp
+│	ClassPractice_1.cpp				类内定义函数和类外定义函数、构造函数、复制构造函数、析构函数的练习
+│	ClassPractice_1.exe
+│	FriendClass.cpp					练习友元——friend的使用
+│	FriendClass.exe
 │      
 ├─201805
 └─练习题

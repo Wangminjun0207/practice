@@ -1,23 +1,15 @@
 #include <stdio.h>
-int area(int r)
-{
-	float s;
-	s=3.14159*r*r;
-	return s;
-}
-void print()
-{
-	printf("************\n");
-			return ;
-	printf("############\n");
-}
 int main()
 {
-	int r,s;
+	int r;
 	scanf("%d",&r);
-	s=area(r);
-	print();
-	printf(" area = %d\n",s);
-	print();
+	int a,b,c;
+	a=r/100;
+	b=r%100/10;
+	c=r%10;
+	if(r==a*a+b*b+c*c)
+	printf("%d是水仙花数！\n",r);
+	else
+	printf("%d不是水仙花数！\n",r);
 	return 0;
 }
