@@ -3,7 +3,8 @@
  *时间：2018-04-08 
  *描述：学生信息管理系统，包括添加学生、查询学生、编辑学生、
         删除学生、打印全部、退出程序的功能 
- */                                                          
+ */   
+
 #include <stdio.h>             
 #include <stdlib.h>            
 #include <windows.h>           
