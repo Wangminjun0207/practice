@@ -2,17 +2,17 @@
 #include <stdlib.h>
 #include <time.h>
 #include <windows.h>
-int g_nNumber;  //ÖĞ½±ºÅÂë 
+int g_nNumber;   //ä¸­å¥–å·ç  
 int main(int args,char *argv[])
 {
 	int n,i,Max,Min,flag=0;
 	int *arr;
 	srand(time(0)) ;
-	printf("\t\t\tÊäÈë³é½±µÄÈËÊı£º");
+	printf("\t\t\tè¾“å…¥æŠ½å¥–çš„äººæ•°ï¼š");
 	scanf("%d",&n);
-	printf("\t\t\tÊäÈëËæ»úÊıµÄÏÂ½çMin£º");
+	printf("\t\t\tè¾“å…¥éšæœºæ•°çš„ä¸‹ç•ŒMinï¼š");
 	scanf("%d",&Min);
-	printf("\t\t\tÊäÈëËæ»úÊıµÄÉÏ½çMax£º");
+	printf("\t\t\tè¾“å…¥éšæœºæ•°çš„ä¸Šç•ŒMaxï¼š");
 	scanf("%d",&Max);
 	arr=(int *)malloc(n*sizeof(int));
 	system("cls");
@@ -20,18 +20,18 @@ int main(int args,char *argv[])
 	{
 		for(i=0;i<n;i++)
 		{
-			arr[i]=rand()%(Max-Min+1)+Min;  // ²úÉú Min ÖÁ Max µÄËæ»úÊı×÷Îª³é½±ºÅÂë 
+			arr[i]=rand()%(Max-Min+1)+Min;  // äº§ç”Ÿ Min è‡³ Max çš„éšæœºæ•°ä½œä¸ºæŠ½å¥–å·ç  
 			printf("\t\tp%d,his number is %d\n",i+1,arr[i]);
 	 	} 
-		g_nNumber=rand()%(Max-Min+1)+Min; // ²úÉú Min ÖÁ Max µÄËæ»úÊı×÷ÎªÖĞ½±ºÅÂë 
+		g_nNumber=rand()%(Max-Min+1)+Min; // äº§ç”Ÿ Min è‡³ Max çš„éšæœºæ•°ä½œä¸ºä¸­å¥–å·ç  
 		puts("Press any key to draw lottry...");
 		system("pause");
 	/******************************************************* 
 		
-		½«³é½±ÕßµÄºÅÂëÓëÖĞ½±ºÅÂë½øĞĞ±È¶Ô£¬Èç¹ûÓĞÈËÖĞ½±£¬¾Í
-		Êä³öÖĞ½±ºÅÂëÒÔ¼°ÖĞ½±ÕßµÄ±àºÅ £»Èç¹ûÃ»ÈËÖĞ½±£¬¾ÍÊä³ö
-		ÖĞ½±ºÅÂë£¬²¢ÇÒ¼ÌĞø³é½±£¬Ö±ÖÁÓĞÈËÖĞ½±ÎªÖ¹£¬ÖĞ½±Õß¿É
-		Í¬Ê±Îª¶àÈË 
+		å°†æŠ½å¥–è€…çš„å·ç ä¸ä¸­å¥–å·ç è¿›è¡Œæ¯”å¯¹ï¼Œå¦‚æœæœ‰äººä¸­å¥–ï¼Œå°±
+		è¾“å‡ºä¸­å¥–å·ç ä»¥åŠä¸­å¥–è€…çš„ç¼–å· ï¼›å¦‚æœæ²¡äººä¸­å¥–ï¼Œå°±è¾“å‡º
+		ä¸­å¥–å·ç ï¼Œå¹¶ä¸”ç»§ç»­æŠ½å¥–ï¼Œç›´è‡³æœ‰äººä¸­å¥–ä¸ºæ­¢ï¼Œä¸­å¥–è€…å¯
+		åŒæ—¶ä¸ºå¤šäºº 
 		
 	********************************************************/ 
 		for(i=0;i<n;i++)
@@ -53,7 +53,7 @@ int main(int args,char *argv[])
 			puts("\t\t===================================");
 		}
 		system("pause");
-		system("cls"); // Çå³ıÆÁÄ» 
+		system("cls"); // æ¸…é™¤å±å¹• 
 	}while(flag==0);
 	return 0;
 }
