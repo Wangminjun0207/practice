@@ -32,7 +32,11 @@ public:
 		cout<<"B"<<endl;
 	}
 	LINE(const LINE &){cout<<"调用复制构造函数！"<<endl;}
-	LINE(POINT a,POINT b)
+	/*
+	*这里的构建函数传引用就好了，不要用 LINE(POINT a,POINT b)，换成LINE(POINT& a,POINT& b)
+	*/
+	
+	LINE(POINT& a,POINT& b)
 	{
 		length = sqrt((a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y)+(a.z-b.z)*(a.z-b.z));
 		cout<<"C"<<endl;

@@ -1,4 +1,3 @@
-
 #include <stdio.h>  
 #include <string.h> 
 void copy(char *p_1,char *p_2,int n)
