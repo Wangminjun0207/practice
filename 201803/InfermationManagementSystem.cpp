@@ -1,17 +1,17 @@
 /**
- *ä½œè€…ï¼šç‹æ•å†› 
- *æ—¶é—´ï¼š2018-04-08 
- *æè¿°ï¼šå­¦ç”Ÿä¿¡æ¯ç®¡ç†ç³»ç»Ÿï¼ŒåŒ…æ‹¬æ·»åŠ å­¦ç”Ÿã€æŸ¥è¯¢å­¦ç”Ÿã€ç¼–è¾‘å­¦ç”Ÿã€
-        åˆ é™¤å­¦ç”Ÿã€æ‰“å°å…¨éƒ¨ã€é€€å‡ºç¨‹åºçš„åŠŸèƒ½ 
+ *×÷Õß£ºÍõÃô¾ü 
+ *Ê±¼ä£º2018-04-08 
+ *ÃèÊö£ºÑ§ÉúĞÅÏ¢¹ÜÀíÏµÍ³£¬°üÀ¨Ìí¼ÓÑ§Éú¡¢²éÑ¯Ñ§Éú¡¢±à¼­Ñ§Éú¡¢
+        É¾³ıÑ§Éú¡¢´òÓ¡È«²¿¡¢ÍË³ö³ÌĞòµÄ¹¦ÄÜ 
  */   
 
 #include <stdio.h>             
 #include <stdlib.h>            
 #include <windows.h>           
-int g_nNumber=0;   //å®šä¹‰å…¨å±€å˜é‡ï¼Œå­˜æ”¾å­¦ç”Ÿäººæ•° 
+int g_nNumber=0;   //¶¨ÒåÈ«¾Ö±äÁ¿£¬´æ·ÅÑ§ÉúÈËÊı 
 /*
- *å®šä¹‰ä¸€ä¸ªç»“æ„ä½“ï¼Œå‘½åä¸ºstudent
- *æˆå‘˜æœ‰å­¦å·ã€å§“åã€æ€§åˆ«ã€å¹´é¾„ã€æˆç»©
+ *¶¨ÒåÒ»¸ö½á¹¹Ìå£¬ÃüÃûÎªstudent
+ *³ÉÔ±ÓĞÑ§ºÅ¡¢ĞÕÃû¡¢ĞÔ±ğ¡¢ÄêÁä¡¢³É¼¨
 */ 
 struct student{
 	int number;
@@ -22,13 +22,13 @@ struct student{
 	struct student *next;
 };
 
-/*åˆ›å»ºä¸€ä¸ªåŠ¨æ€é“¾è¡¨ï¼Œç”¨äºå­˜æ”¾å­¦ç”Ÿä¿¡æ¯*/ 
+/*´´½¨Ò»¸ö¶¯Ì¬Á´±í£¬ÓÃÓÚ´æ·ÅÑ§ÉúĞÅÏ¢*/ 
 struct student *Creat()
 {
 	struct student *head,*p1,*p2;
 	head=NULL;
 	p1=p2=(	struct student *)malloc(sizeof(	struct student));
-	printf("è¯·ä¾æ¬¡è¾“å…¥å­¦å·ã€å§“åã€æ€§åˆ«ã€å¹´é¾„ã€æˆç»©\n");
+	printf("ÇëÒÀ´ÎÊäÈëÑ§ºÅ¡¢ĞÕÃû¡¢ĞÔ±ğ¡¢ÄêÁä¡¢³É¼¨\n");
 	scanf("%d%s%s%d%f",&p1->number,&p1->name,&p1->gerden,&p1->age,&p1->mark);
 	while(p1->number!=0)
 	{
@@ -39,7 +39,7 @@ struct student *Creat()
 			p2->next=p1;
 		p2=p1;	
 		p1=(struct student *)malloc(sizeof(struct student));
-//		printf("è¯·ä¾æ¬¡è¾“å…¥å­¦å·ã€å§“åã€æ€§åˆ«ã€å¹´é¾„ã€æˆç»©\n");
+//		printf("ÇëÒÀ´ÎÊäÈëÑ§ºÅ¡¢ĞÕÃû¡¢ĞÔ±ğ¡¢ÄêÁä¡¢³É¼¨\n");
 		scanf("%d%s%s%d%f",&p1->number,&p1->name,&p1->gerden,&p1->age,&p1->mark);
 	}
 	p2->next=NULL;
@@ -47,25 +47,25 @@ struct student *Creat()
 	return head;
  } 
  
-/*åˆ é™¤ä¸€ä¸ªå­¦ç”Ÿä¿¡æ¯ï¼Œè¿”å›ä¸€ä¸ªç»“æ„ä½“æŒ‡é’ˆ */ 
+/*É¾³ıÒ»¸öÑ§ÉúĞÅÏ¢£¬·µ»ØÒ»¸ö½á¹¹ÌåÖ¸Õë */ 
 struct student *Delete(struct student *head)
 {
 	int num;
 	printf("please input number :");
 	scanf("%d",&num);
 	struct student *p1,*p2;
-	if(head==NULL)    //å¯¹æŒ‡é’ˆè¿›è¡Œåˆ¤æ–­ï¼Œçœ‹æ˜¯å¦ä¸ºç©º 
+	if(head==NULL)    //¶ÔÖ¸Õë½øĞĞÅĞ¶Ï£¬¿´ÊÇ·ñÎª¿Õ 
 	{
 		printf("\nThe list is NULL!\n");
 		return head;
 	}
 	p1=head;
-	while(p1->number!=num && p1->next!=NULL)  //éå†é“¾è¡¨ï¼ŒæŒ‰ç…§å­¦å·è¿›è¡ŒæŸ¥æ‰¾ 
+	while(p1->number!=num && p1->next!=NULL)  //±éÀúÁ´±í£¬°´ÕÕÑ§ºÅ½øĞĞ²éÕÒ 
 	{
 		p2=p1;
 		p1=p1->next;
 	}
-	if(p1->number==num)   //ç¬¬ä¸€ç§æƒ…å†µï¼šæ‰¾åˆ°è¯¥å­¦ç”Ÿ 
+	if(p1->number==num)   //µÚÒ»ÖÖÇé¿ö£ºÕÒµ½¸ÃÑ§Éú 
 	{
 		if(p1==head)
 		head=p1->next;
@@ -75,18 +75,18 @@ struct student *Delete(struct student *head)
 		printf("Ddelete : %d\n",num);
 		g_nNumber=g_nNumber-1;
 	}
-	else                //ç¬¬äºŒç§æƒ…å†µï¼šæ²¡æœ‰æ‰¾åˆ°è¯¥å­¦ç”Ÿ
+	else                //µÚ¶şÖÖÇé¿ö£ºÃ»ÓĞÕÒµ½¸ÃÑ§Éú
 		printf("%d is not been found!\n");
 	system("pause");
 	return head;
 }
 
-/*æ’å…¥ä¸€ä¸ªå­¦ç”Ÿä¿¡æ¯ï¼Œè¿”å›ä¸€ä¸ªç»“æ„ä½“æŒ‡é’ˆ */ 
+/*²åÈëÒ»¸öÑ§ÉúĞÅÏ¢£¬·µ»ØÒ»¸ö½á¹¹ÌåÖ¸Õë */ 
 struct student *Insert(struct student *head)
 {
 	struct student *stud;
-	stud=(	struct student *)malloc(sizeof(	struct student));//åŠ¨æ€ç”³è¯·å†…å­˜ 
-	printf("è¯·ä¾æ¬¡è¾“å…¥å­¦å·ã€å§“åã€æ€§åˆ«ã€å¹´é¾„ã€æˆç»©\n");
+	stud=(	struct student *)malloc(sizeof(	struct student));//¶¯Ì¬ÉêÇëÄÚ´æ 
+	printf("ÇëÒÀ´ÎÊäÈëÑ§ºÅ¡¢ĞÕÃû¡¢ĞÔ±ğ¡¢ÄêÁä¡¢³É¼¨\n");
 	scanf("%d%s%s%d%f",&stud->number,&stud->name,&stud->gerden,&stud->age,&stud->mark);
 	struct student *p0,*p1,*p2;
 	p1=head;
@@ -117,13 +117,13 @@ struct student *Insert(struct student *head)
 			p0->next=NULL;
 		}
 	}
-	printf("å­¦å·ä¸º %d çš„å­¦ç”Ÿä¿¡æ¯å·²ç»æ’å…¥!\n",stud->number);
+	printf("Ñ§ºÅÎª %d µÄÑ§ÉúĞÅÏ¢ÒÑ¾­²åÈë!\n",stud->number);
 	system("pause");
 	g_nNumber=g_nNumber+1;
 	return head;
 }
 
- /*æŸ¥è¯¢ä¸€ä¸ªå­¦ç”Ÿä¿¡æ¯ï¼Œå¹¶ä¸”è¾“å‡º*/ 
+ /*²éÑ¯Ò»¸öÑ§ÉúĞÅÏ¢£¬²¢ÇÒÊä³ö*/ 
  struct student Query(struct student *head)
  {
 	struct student *p1;
@@ -135,17 +135,17 @@ struct student *Insert(struct student *head)
 	{
 		p1=p1->next;
 	}
-	if(p1->number==num)       //æ‰¾åˆ°è¯¥å­¦ç”Ÿï¼Œè¾“å‡ºå­¦ç”Ÿä¿¡æ¯ 
+	if(p1->number==num)       //ÕÒµ½¸ÃÑ§Éú£¬Êä³öÑ§ÉúĞÅÏ¢ 
 	{
-		printf("å­¦å·	å§“å	æ€§åˆ«	å¹´é¾„	æˆç»©\n");
+		printf("Ñ§ºÅ	ĞÕÃû	ĞÔ±ğ	ÄêÁä	³É¼¨\n");
 		printf("%d\t%s\t%s\t%d\t%.2f\n",p1->number,p1->name,p1->gerden,p1->age,p1->mark);
 	}
-	else                     //æœªæ‰¾åˆ°è¯¥å­¦ç”Ÿï¼Œè¾“å‡ºé”™è¯¯ä¿¡æ¯ 
+	else                     //Î´ÕÒµ½¸ÃÑ§Éú£¬Êä³ö´íÎóĞÅÏ¢ 
 		printf("%d is not been found!\n",num);
 	system("pause");
  }
  
- /*ç¼–è¾‘ä¸€ä¸ªå­¦ç”Ÿä¿¡æ¯ï¼Œè¿”å›ä¸€ä¸ªç»“æ„ä½“æŒ‡é’ˆ */ 
+ /*±à¼­Ò»¸öÑ§ÉúĞÅÏ¢£¬·µ»ØÒ»¸ö½á¹¹ÌåÖ¸Õë */ 
 struct student *Editor(struct student *head)
 {
 	struct student *p1;
@@ -159,7 +159,7 @@ struct student *Editor(struct student *head)
 	}
 	if(p1->number==num)
 		{
-			printf("è¯·ä¾æ¬¡è¾“å…¥å­¦å·ã€å§“åã€æ€§åˆ«ã€å¹´é¾„ã€æˆç»©\n");
+			printf("ÇëÒÀ´ÎÊäÈëÑ§ºÅ¡¢ĞÕÃû¡¢ĞÔ±ğ¡¢ÄêÁä¡¢³É¼¨\n");
 			scanf("%d%s%s%d%f",&p1->number,&p1->name,&p1->gerden,&p1->age,&p1->mark);
 			printf("The %d is  been editor!\n",num);
 		}
@@ -169,24 +169,24 @@ struct student *Editor(struct student *head)
 	return head;
 }
 
-/*èœå•ç•Œé¢ï¼Œæœ‰ä»¥ä¸‹å…­ç§åŠŸèƒ½*/ 
+/*²Ëµ¥½çÃæ£¬ÓĞÒÔÏÂÁùÖÖ¹¦ÄÜ*/ 
  int Interface()
  {
  	system("cls");
- 	puts("1.æ·»åŠ å­¦ç”Ÿ");
- 	puts("2.æŸ¥è¯¢å­¦ç”Ÿ");
- 	puts("3.ç¼–è¾‘å­¦ç”Ÿ");
- 	puts("4.åˆ é™¤å­¦ç”Ÿ");
- 	puts("5.æ‰“å°å…¨éƒ¨");
- 	puts("6.é€€å‡ºç¨‹åº");
+ 	puts("1.Ìí¼ÓÑ§Éú");
+ 	puts("2.²éÑ¯Ñ§Éú");
+ 	puts("3.±à¼­Ñ§Éú");
+ 	puts("4.É¾³ıÑ§Éú");
+ 	puts("5.´òÓ¡È«²¿");
+ 	puts("6.ÍË³ö³ÌĞò");
  }
  
-/*æ‰“å°æ‰€æœ‰å­¦ç”Ÿä¿¡æ¯ */ 
+/*´òÓ¡ËùÓĞÑ§ÉúĞÅÏ¢ */ 
 struct student Output(struct student *head)
 {
 	struct student *p1;
 	p1=head;
-	printf("å­¦å·	å§“å	æ€§åˆ«	å¹´é¾„	æˆç»©\n");
+	printf("Ñ§ºÅ	ĞÕÃû	ĞÔ±ğ	ÄêÁä	³É¼¨\n");
 	while(p1!=NULL)
 	{
 		printf("%d\t%s\t%s\t%d\t%.2f\n",p1->number,p1->name,p1->gerden,p1->age,p1->mark);
@@ -195,12 +195,12 @@ struct student Output(struct student *head)
 	system("pause");
 }
 
-/*é€€å‡ºç¨‹åºç•Œé¢*/ 
+/*ÍË³ö³ÌĞò½çÃæ*/ 
 int Exit()
 {
 	system("cls");
 	puts("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t====================================" );
-	puts("\t\t\t\t\t| æ„Ÿè°¢æ‚¨çš„ä½¿ç”¨ï¼Œå†è§!              |");
+	puts("\t\t\t\t\t| ¸ĞĞ»ÄúµÄÊ¹ÓÃ£¬ÔÙ¼û!              |");
 	puts("\t\t\t\t\t| Thank you for your use, goodbye! |");
 	puts("\t\t\t\t\t====================================\n\n\n\n\n\n\n\n\n\n\n\n");
 	exit(0);
@@ -214,16 +214,16 @@ int main(int argc, char *argv[])
 	do
 	{
 		Interface();
-		printf("è¯·é€‰æ‹©æ‚¨è¦å®ç°çš„åŠŸèƒ½:"); 
+		printf("ÇëÑ¡ÔñÄúÒªÊµÏÖµÄ¹¦ÄÜ:"); 
  		scanf("%d",&selectkey);
 		switch(selectkey)
 		{
-			case 1:system("cls");printf("æ·»åŠ å­¦ç”Ÿ\n\n");head_1=Insert(head);break;
-			case 2:system("cls");printf("æŸ¥è¯¢å­¦ç”Ÿ\n\n");Query(head);break;
-			case 3:system("cls");printf("ç¼–è¾‘å­¦ç”Ÿ\n\n");head_1=Editor(head);break;
-			case 4:system("cls");printf("åˆ é™¤å­¦ç”Ÿ\n\n");head_1=Delete(head);break;
-			case 5:system("cls");printf("æ‰“å°å…¨éƒ¨\n\n");Output(head);break;
-			case 6:system("cls");printf("é€€å‡ºç¨‹åº\n\n");Exit();break;
+			case 1:system("cls");printf("Ìí¼ÓÑ§Éú\n\n");head_1=Insert(head);break;
+			case 2:system("cls");printf("²éÑ¯Ñ§Éú\n\n");Query(head);break;
+			case 3:system("cls");printf("±à¼­Ñ§Éú\n\n");head_1=Editor(head);break;
+			case 4:system("cls");printf("É¾³ıÑ§Éú\n\n");head_1=Delete(head);break;
+			case 5:system("cls");printf("´òÓ¡È«²¿\n\n");Output(head);break;
+			case 6:system("cls");printf("ÍË³ö³ÌĞò\n\n");Exit();break;
 		}
 		if(selectkey==1 || selectkey==3 || selectkey==4)
 			head = head_1;
