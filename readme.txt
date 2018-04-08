@@ -125,10 +125,8 @@ E:.
 │      QuickSort.cpp
 │      QuickSort.exe
 │      RecursiveFunction(递归函数).cpp
-│	ClassPractice_1.cpp				类内定义函数和类外定义函数、构造函数、复制构造函数、析构函数的练习
+│	ClassPractice_1.cpp				类内定义函数和类外定义函数、构造函数、复制构造函数、析构函数的练习，
 │	ClassPractice_1.exe
-│	FriendClass.cpp					练习友元——friend的使用
-│	FriendClass.exe
 │      
 ├─201805
 └─练习题

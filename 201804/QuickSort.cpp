@@ -1,7 +1,7 @@
 #include <stdio.h> 
 #include <stdlib.h>
 #include <time.h>
-int Ascending(int*);
+int Ascending(int*);  
 int Descending(int*);
 int Interface();
 int g_nNumber;
@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	srand(time(0)) ;
 	printf("请输入数组长度：");
 	scanf("%d",&g_nNumber);
-	arr=(int *)malloc(g_nNumber*sizeof(int));
+	arr=(int *)malloc(g_nNumber*sizeof(int)); //申请内存 
 	for(int i=0;i<g_nNumber-1;i++)
 	arr[i]=rand()%9901+100;
 	printf("原数组为：\n");
@@ -47,6 +47,7 @@ int main(int argc, char *argv[])
 	return 0;
 }
 
+/* 进行升序排序 */ 
 int Ascending(int *p)
 {
 	int temp;
@@ -72,6 +73,7 @@ int Ascending(int *p)
 	return 0;
 }
 
+/*  进行降序排序  */
 int Descending(int *p)
 {
 	int temp;
@@ -97,6 +99,7 @@ int Descending(int *p)
 	return 0;
 }
 
+//菜单界面 
 int Interface()
 {
 	puts("请选择你要做的操作");
