@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=4
 CompilerSettings=0000000100000000001000000
-UnitCount=4
+UnitCount=6
 
 [VersionInfo]
 Major=1
@@ -51,7 +51,7 @@ AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit4]
-FileName=Student.cpp
+FileName=StudentMgr.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -61,7 +61,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=Student.h
+FileName=Student.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -81,7 +81,28 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=Î´ÃüÃû3
+FileName=Student.h
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+CompileCpp=1
+
+[Unit5]
+FileName=StudentMgr.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit6]
+FileName=Predefine.h
+CompileCpp=1
 Folder=
 Compile=1
 Link=1
