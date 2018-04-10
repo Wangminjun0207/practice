@@ -10,9 +10,10 @@
 #include <string.h>           
 #include <windows.h>           
 int g_nNumber=0;   //定义全局变量，存放学生人数 
-void Interface_1();
 void Interface();
+void Interface_1();
 void Interface_2();
+
  /*
  *定义一个结构体，命名为student
  *成员有学号、姓名、性别、年龄、成绩
@@ -161,6 +162,11 @@ struct student *Insert(struct student *head)
 {
 	struct student *stud;
 	stud=(	struct student *)malloc(sizeof(	struct student));//动态申请内存 
+	if(stud == NULL)
+	{
+		printf("申请内存出错！\n\a");
+		exit(0);
+	}
 	printf("请依次输入学号、姓名、性别、年龄、成绩、身份证号码\n");
 	scanf("%d%s%s%d%f%s",&stud->number,&stud->name,&stud->gerden,&stud->age,&stud->mark,&stud->ID);
 	struct student *p0,*p1,*p2;
@@ -335,6 +341,61 @@ void Output(struct student *head)
 	system("pause");
 }
 
+/* 按照性别进行统计人数*/
+void Statistic_g(struct student *head)
+{
+	int nMale = 0;
+	int nFemale = 0; 
+	struct student *p1;
+	if(head==NULL)    //对指针进行判断，看是否为空 
+	{
+		printf("\nThe list is NULL!\n");
+		exit(0);
+	}
+	p1=head;
+	while(p1!=NULL)  //遍历链表，按照性别进行统计 
+	{
+		if(strcmp(p1->gerden,"male")==0)
+			nMale++;
+		else if(strcmp(p1->gerden,"female")==0)
+			nFemale++;
+		p1=p1->next;
+	}
+	printf("男生有 %d 人，女生有 %d 人!\n",nMale,nFemale);
+	system("pause");
+}
+
+/* 按照年龄进行统计人数*/
+void Statistic_a(struct student *head)
+{
+	int nAge_18 = 0;
+	int nAge_19 = 0; 
+	int nAge_20 = 0;
+	int nAge_another = 0;
+	struct student *p1;
+	if(head==NULL)    //对指针进行判断，看是否为空 
+	{
+		printf("\nThe list is NULL!\n");
+		exit(0);
+	}
+	p1=head;
+	while(p1!=NULL)  //遍历链表，按照年龄进行统计 
+	{
+		if(p1->age==18)
+			nAge_18++;
+		else if(p1->age==19)
+			nAge_19++; 
+		else if(p1->age==20)
+			nAge_20++;
+		else
+			nAge_another++;
+		p1=p1->next;
+	}
+	printf("18岁的有 %d 人，19岁的有 %d 人，20岁的有 %d 人，其他年龄的有 %d 人!\n",
+			nAge_18,nAge_19,nAge_20,nAge_another);
+	system("pause");
+}
+
 /*退出程序界面*/ 
 int Exit()
 {
@@ -383,13 +444,13 @@ int main(int argc, char *argv[])
 				   break;
 			case 5:system("cls");printf("打印全部\n\n");Output(head);break;
 			case 6:system("cls");printf("人数统计\n\n");
-			       nterface_2();
+			       Interface_2();
 				   scanf("%d",&selectkey_1);
 				   switch(selectkey_1)
 				   {
-						case 1:system("cls");printf("按照人数统计\n\n");break;
-					    case 2:system("cls");printf("按照性别统计\n\n");break;
-						case 3:system("cls");printf("按照年龄统计\n\n");break;
+						case 1:system("cls");printf("按照人数统计\n\n");printf("总共有 %d 人！\n\n",g_nNumber);system("pause");break;
+					    case 2:system("cls");printf("按照性别统计\n\n");Statistic_g(head);break;
+						case 3:system("cls");printf("按照年龄统计\n\n");Statistic_a(head);break;
 				   } 
 				   break;
 			case 7:system("cls");printf("退出程序\n\n");Exit();break;
