@@ -8,7 +8,6 @@ class Student
 		Student(unsigned int nNumber, char *pName, int nGender, char *pGrade);
 		~Student();
 		int GetNumber(){return m_nNumber;}
-		int InitStuArray();
 	protected:
 		unsigned int m_nNumber;
 		char m_strName[12];

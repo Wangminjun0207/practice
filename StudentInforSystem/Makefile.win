@@ -4,8 +4,8 @@
 CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
-OBJ      = main.o Student.o StudentMgr.o
-LINKOBJ  = main.o Student.o StudentMgr.o
+OBJ      = main.o Student.o StudentMgr.o Course.o Score.o ComposeMgr.o ScoreMgr.o CourseMgr.o
+LINKOBJ  = main.o Student.o StudentMgr.o Course.o Score.o ComposeMgr.o ScoreMgr.o CourseMgr.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32 -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -32,3 +32,18 @@ Student.o: Student.cpp
 
 StudentMgr.o: StudentMgr.cpp
 	$(CPP) -c StudentMgr.cpp -o StudentMgr.o $(CXXFLAGS)
+
+Course.o: Course.cpp
+	$(CPP) -c Course.cpp -o Course.o $(CXXFLAGS)
+
+Score.o: Score.cpp
+	$(CPP) -c Score.cpp -o Score.o $(CXXFLAGS)
+
+ComposeMgr.o: ComposeMgr.cpp
+	$(CPP) -c ComposeMgr.cpp -o ComposeMgr.o $(CXXFLAGS)
+
+ScoreMgr.o: ScoreMgr.cpp
+	$(CPP) -c ScoreMgr.cpp -o ScoreMgr.o $(CXXFLAGS)
+
+CourseMgr.o: CourseMgr.cpp
+	$(CPP) -c CourseMgr.cpp -o CourseMgr.o $(CXXFLAGS)
