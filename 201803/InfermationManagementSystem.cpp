@@ -344,8 +344,8 @@ void Output(struct student *head)
 /* 按照性别进行统计人数*/
 void Statistic_g(struct student *head)
 {
-	int nMale = 0;
-	int nFemale = 0; 
+	int nMale = 0; // 存放男生人数 
+	int nFemale = 0; // 存放女生人数 
 	struct student *p1;
 	if(head==NULL)    //对指针进行判断，看是否为空 
 	{
@@ -368,10 +368,10 @@ void Statistic_g(struct student *head)
 /* 按照年龄进行统计人数*/
 void Statistic_a(struct student *head)
 {
-	int nAge_18 = 0;
-	int nAge_19 = 0; 
-	int nAge_20 = 0;
-	int nAge_another = 0;
+	int nAge_18 = 0; // 存放18岁的人数 
+	int nAge_19 = 0;  //存放19岁的人数 
+	int nAge_20 = 0; //存放20岁的人数 
+	int nAge_another = 0;  //存放其他年龄的人数 
 	struct student *p1;
 	if(head==NULL)    //对指针进行判断，看是否为空 
 	{
