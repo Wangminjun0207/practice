@@ -27,23 +27,23 @@ $(BIN): $(OBJ)
 main.o: main.c
 	$(CC) -c main.c -o main.o $(CFLAGS)
 
-Interface.o: Interface.cpp
-	$(CC) -c Interface.cpp -o Interface.o $(CFLAGS)
+Interface.o: Interface.c
+	$(CC) -c Interface.c -o Interface.o $(CFLAGS)
 
-StudentDel.o: StudentDel.cpp
-	$(CC) -c StudentDel.cpp -o StudentDel.o $(CFLAGS)
+StudentDel.o: StudentDel.c
+	$(CC) -c StudentDel.c -o StudentDel.o $(CFLAGS)
 
-StudentDisplay.o: StudentDisplay.cpp
-	$(CC) -c StudentDisplay.cpp -o StudentDisplay.o $(CFLAGS)
+StudentDisplay.o: StudentDisplay.c
+	$(CC) -c StudentDisplay.c -o StudentDisplay.o $(CFLAGS)
 
-StudentEditor.o: StudentEditor.cpp
-	$(CC) -c StudentEditor.cpp -o StudentEditor.o $(CFLAGS)
+StudentEditor.o: StudentEditor.c
+	$(CC) -c StudentEditor.c -o StudentEditor.o $(CFLAGS)
 
-StudentInsert.o: StudentInsert.cpp
-	$(CC) -c StudentInsert.cpp -o StudentInsert.o $(CFLAGS)
+StudentInsert.o: StudentInsert.c
+	$(CC) -c StudentInsert.c -o StudentInsert.o $(CFLAGS)
 
-StudentQuery.o: StudentQuery.cpp
-	$(CC) -c StudentQuery.cpp -o StudentQuery.o $(CFLAGS)
+StudentQuery.o: StudentQuery.c
+	$(CC) -c StudentQuery.c -o StudentQuery.o $(CFLAGS)
 
-StudentStatistic.o: StudentStatistic.cpp
-	$(CC) -c StudentStatistic.cpp -o StudentStatistic.o $(CFLAGS)
+StudentStatistic.o: StudentStatistic.c
+	$(CC) -c StudentStatistic.c -o StudentStatistic.o $(CFLAGS)
