@@ -1,0 +1,49 @@
+# Project: StudentInforManageSystem_2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o Interface.o StudentDel.o StudentDisplay.o StudentEditor.o StudentInsert.o StudentQuery.o StudentStatistic.o
+LINKOBJ  = main.o Interface.o StudentDel.o StudentDisplay.o StudentEditor.o StudentInsert.o StudentQuery.o StudentStatistic.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32 -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = StudentInforManageSystem_2.exe
+CXXFLAGS = $(CXXINCS) -m32 -g3
+CFLAGS   = $(INCS) -m32 -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+Interface.o: Interface.cpp
+	$(CC) -c Interface.cpp -o Interface.o $(CFLAGS)
+
+StudentDel.o: StudentDel.cpp
+	$(CC) -c StudentDel.cpp -o StudentDel.o $(CFLAGS)
+
+StudentDisplay.o: StudentDisplay.cpp
+	$(CC) -c StudentDisplay.cpp -o StudentDisplay.o $(CFLAGS)
+
+StudentEditor.o: StudentEditor.cpp
+	$(CC) -c StudentEditor.cpp -o StudentEditor.o $(CFLAGS)
+
+StudentInsert.o: StudentInsert.cpp
+	$(CC) -c StudentInsert.cpp -o StudentInsert.o $(CFLAGS)
+
+StudentQuery.o: StudentQuery.cpp
+	$(CC) -c StudentQuery.cpp -o StudentQuery.o $(CFLAGS)
+
+StudentStatistic.o: StudentStatistic.cpp
+	$(CC) -c StudentStatistic.cpp -o StudentStatistic.o $(CFLAGS)
