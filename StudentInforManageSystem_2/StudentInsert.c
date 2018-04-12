@@ -1,4 +1,5 @@
 #include "Predefine.h"
+extern void WriteToFile(struct student *head);
 extern int g_nNumber;
 /*插入一个学生信息，返回一个结构体指针 */ 
 struct student *Insert(struct student *head)
@@ -42,6 +43,7 @@ struct student *Insert(struct student *head)
 		}
 	}
 	printf("学号为 %d 的学生信息已经插入!\n",stud->number);
+	WriteToFile(head);
 	system("pause");
 	g_nNumber=g_nNumber+1;
 	return head;
