@@ -1,4 +1,5 @@
 #include "Predefine.h"
+extern void WriteToFile(struct student *head);
 extern int g_nNumber;
 /*按照学号删除一个学生信息，返回一个结构体指针 */ 
 struct student *Delete_N(struct student *head)
@@ -31,6 +32,7 @@ struct student *Delete_N(struct student *head)
 	else                //第二种情况：没有找到该学生
 		printf("%d is not been found!\n");
 	system("pause");
+	WriteToFile(head);
 	return head;
 }
 
@@ -65,6 +67,7 @@ struct student *Delete_n(struct student *head)
 	else                //第二种情况：没有找到该学生
 		printf("%s is not been found!\n",name);
 	system("pause");
+	WriteToFile(head);
 	return head;
 }
 
@@ -99,5 +102,6 @@ struct student *Delete_s(struct student *head)
 	else                //第二种情况：没有找到该学生
 		printf("%f is not been found!\n",score);
 	system("pause");
+	WriteToFile(head);
 	return head;
 }

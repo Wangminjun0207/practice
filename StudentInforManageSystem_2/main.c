@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Predefine.h"
+extern struct student *ReadFromFile(struct student *head);
 extern struct student *Delete_N(struct student *head);
 extern struct student *Delete_n(struct student *head);
 extern struct student *Delete_s(struct student *head);
@@ -24,6 +25,7 @@ int main(int argc, char *argv[])
 	int selectkey;
 	int selectkey_1;
 	head = NULL;
+	head = ReadFromFile(head);
 	do
 	{
 		Interface();

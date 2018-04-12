@@ -1,5 +1,5 @@
 #include "Predefine.h"
-
+extern void WriteToFile(struct student *head);
 /*编辑一个学生信息，返回一个结构体指针 */ 
 struct student *Editor(struct student *head)
 {
@@ -20,6 +20,7 @@ struct student *Editor(struct student *head)
 		}
 	else
 		printf("The %d is not been found!\n",num);
+	WriteToFile(head);	
 	system("pause");
 	return head;
 }
