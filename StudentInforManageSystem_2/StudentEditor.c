@@ -8,9 +8,9 @@ struct student *Editor(struct student *head)
 	int num;
 	printf("Please input the student number you want to editor :");
 	scanf("%d",&num);
-	while(p1->number!=num && p1->next!=NULL)
+	while(p1->number != num && NULL != p1->next)
 	{
-		p1=p1->next;
+		p1 = p1->next;
 	}
 	if(p1->number==num)
 		{

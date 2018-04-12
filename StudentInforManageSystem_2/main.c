@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 						case 3:system("cls");printf("按照年龄统计\n\n");Statistic_a(head);break;
 				   } 
 				   break;
-			case 7:system("cls");printf("退出程序\n\n");Exit();break;
+			case 7:system("cls");printf("退出程序\n\n");free(head);Exit();break;
 			/*
 			*  这里有个致命的问题，你在程序启动时候创建了一个链表，存了很多信息，但是在退出的时候，直接Exit(),这个链表申请的内存是没有释放的，你需要在这里写一个函数，删除这个链表
 			*  这样才是你mallocl出来的student被正常释放的最正确的方式。这个内存管理是非常重要的。

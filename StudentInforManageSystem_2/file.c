@@ -38,10 +38,13 @@ struct student *ReadFromFile(struct student *head)
 	}
 	
 	head=p1=p2=(struct student *)malloc(sizeof(struct student));
-	fread(p1,sizeof(struct student),1,fp);
+	if(NULL != p1)
+		fread(p1,sizeof(struct student),1,fp);
+	else
+		exit(0);
 	while(!feof(fp))
 	{
-		g_nNumber=g_nNumber+1;
+		g_nNumber = g_nNumber + 1;
 		p2->next=p1;
 		p2=p1;	
 		p1=(struct student *)malloc(sizeof(struct student));
@@ -49,9 +52,12 @@ struct student *ReadFromFile(struct student *head)
 		*  任何时候，如果malloc了，一定要判断malloc的结果是不是NULL，因此这里需要加一个if (NULL != p1),然后再做执行，否则要报错，内存分配失败
 		*  add by wangpeng@2018/4/12 
 		*/
-		fread(p1,sizeof(struct student),1,fp);
+		if(NULL != p1)
+			fread(p1,sizeof(struct student),1,fp);
+		else
+			exit(0);
 	}
-	p2->next=NULL;
+	p2->next = NULL;
 	free(p1); 
 	fclose(fp);
 	return head;
