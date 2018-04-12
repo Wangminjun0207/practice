@@ -8,6 +8,11 @@ void Query_N(struct student *head)
 	int num;
 	printf("Please input the student number you want to query :");
 	scanf("%d",&num);
+	/*
+	*所有的查询函数都犯了同样的一个错误，没有判断链表是不是空的，假如一个对象也没有，你的查询会失败，让程序崩溃的，
+	*所以你需要在做链表遍历的时候，判断链表是否为空。
+	*add by wangpeng@2018/4/12 
+	*/
 	while(p1->number!=num && p1->next!=NULL)
 	{
 		p1=p1->next;

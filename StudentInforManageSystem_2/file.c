@@ -45,6 +45,10 @@ struct student *ReadFromFile(struct student *head)
 		p2->next=p1;
 		p2=p1;	
 		p1=(struct student *)malloc(sizeof(struct student));
+		/*
+		*  任何时候，如果malloc了，一定要判断malloc的结果是不是NULL，因此这里需要加一个if (NULL != p1),然后再做执行，否则要报错，内存分配失败
+		*  add by wangpeng@2018/4/12 
+		*/
 		fread(p1,sizeof(struct student),1,fp);
 	}
 	p2->next=NULL;

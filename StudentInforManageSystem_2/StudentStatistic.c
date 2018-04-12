@@ -33,6 +33,12 @@ void Statistic_a(struct student *head)
 	int nAge_20 = 0; //存放20岁的人数 
 	int nAge_another = 0;  //存放其他年龄的人数 
 	struct student *p1;
+	/*
+	* 一般情况下，如果需要和NULL做对比，用if(NULL == head)这样的方式，不要用if(head == NULL)这样的方式，因为有可能你会疏忽写成了if (head = NULL),这样就错了，而且查起来很恶心
+	* 如果把NULL放前面，就会编译不过，因为不可能让NULL = head,因此就少这样的低级错误。
+	* add by wangpeng@2018/4/12
+	*/
+	
 	if(head==NULL)    //对指针进行判断，看是否为空 
 	{
 		printf("\nThe list is NULL!\n");
