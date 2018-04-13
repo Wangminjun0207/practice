@@ -47,7 +47,7 @@ struct student *Insert(struct student *head)
 			printf("\n学号为 %d 的学生信息已经插入!\n",stud->number);
 		} 
 		g_nNumber = g_nNumber + 1;
-		printf("\n\n是否要继续添加学生信息？  ");
+		printf("\n\n是否要继续添加学生信息？   ");
 		scanf("%*c%c",&select); 
 	}while(select=='y' || select=='Y');
 	WriteToFile(head);
