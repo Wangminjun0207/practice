@@ -1,54 +1,54 @@
 #include "Predefine.h"
 extern void WriteToFile(struct student *head);
 extern int g_nNumber;
-/*²åÈëÒ»¸öÑ§ÉúĞÅÏ¢£¬·µ»ØÒ»¸ö½á¹¹ÌåÖ¸Õë */ 
+/*æ’å…¥ä¸€ä¸ªå­¦ç”Ÿä¿¡æ¯ï¼Œè¿”å›ä¸€ä¸ªç»“æ„ä½“æŒ‡é’ˆ */ 
 struct student *Insert(struct student *head)
 {
 	struct student *stud;
-	char select;//ÊÇ·ñ¼ÌĞøÌí¼ÓÑ§ÉúĞÅÏ¢ 
+	char select;//æ˜¯å¦ç»§ç»­æ·»åŠ å­¦ç”Ÿä¿¡æ¯ 
 	do
 	{
-	stud = (struct student *)malloc(sizeof(	struct student));//¶¯Ì¬ÉêÇëÄÚ´æ 
-	if(NULL == stud)
-	{
-		printf("ÉêÇëÄÚ´æ³ö´í£¡\n\a");
-		exit(0);
-	}
-	printf("ÇëÒÀ´ÎÊäÈëÑ§ºÅ¡¢ĞÕÃû¡¢ĞÔ±ğ¡¢ÄêÁä¡¢³É¼¨¡¢Éí·İÖ¤ºÅÂë\n");
-	scanf("%d%s%s%d%f%s",&stud->number,&stud->name,&stud->gerden,&stud->age,&stud->mark,&stud->ID);
-	struct student *p0,*p1,*p2;
-	p1 = head;
-	p0 = stud;
-	if(NULL == head)
-	{
-		head = p0;
-		p0->next = NULL;
-	}
-	else
-	{
-		while((p0->number>p1->number ) && (NULL != p1->next))
+		stud = (struct student *)malloc(sizeof(	struct student));//åŠ¨æ€ç”³è¯·å†…å­˜ 
+		if(NULL == stud)
 		{
-			p2 = p1;
-			p1 = p1->next;
+			printf("ç”³è¯·å†…å­˜å‡ºé”™ï¼\n\a");
+			exit(0);
 		}
-		if(p0->number <= p1->number)
+		printf("è¯·ä¾æ¬¡è¾“å…¥å­¦å·ã€å§“åã€æ€§åˆ«ã€å¹´é¾„ã€æˆç»©ã€èº«ä»½è¯å·ç \n");
+		scanf("%d%s%s%d%f%s",&stud->number,&stud->name,&stud->gerden,&stud->age,&stud->mark,&stud->ID);
+		struct student *p0,*p1,*p2;
+		p1 = head;
+		p0 = stud;
+		if(NULL == head)
 		{
-			if(head==p1)
-				head = p0;
-			else
-				p2->next=p0;
-			p0->next = p1;
+			head = p0;
+			p0->next = NULL;
 		}
 		else
 		{
-			p1->next = p0;
-			p0->next = NULL;
-		}
-		printf("\nÑ§ºÅÎª %d µÄÑ§ÉúĞÅÏ¢ÒÑ¾­²åÈë!\n",stud->number);
-	} 
-	g_nNumber = g_nNumber + 1;
-	printf("\n\nÊÇ·ñÒª¼ÌĞøÌí¼ÓÑ§ÉúĞÅÏ¢£¿  ");
-	scanf("%*c%c",&select); 
+			while((p0->number>p1->number ) && (NULL != p1->next))
+			{
+				p2 = p1;
+				p1 = p1->next;
+			}
+			if(p0->number <= p1->number)
+			{
+				if(head==p1)
+					head = p0;
+				else
+					p2->next=p0;
+				p0->next = p1;
+			}
+			else
+			{
+				p1->next = p0;
+				p0->next = NULL;
+			}
+			printf("\nå­¦å·ä¸º %d çš„å­¦ç”Ÿä¿¡æ¯å·²ç»æ’å…¥!\n",stud->number);
+		} 
+		g_nNumber = g_nNumber + 1;
+		printf("\n\næ˜¯å¦è¦ç»§ç»­æ·»åŠ å­¦ç”Ÿä¿¡æ¯ï¼Ÿ  ");
+		scanf("%*c%c",&select); 
 	}while(select=='y' || select=='Y');
 	WriteToFile(head);
 	return head;
