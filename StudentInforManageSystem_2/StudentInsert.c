@@ -5,6 +5,9 @@ extern int g_nNumber;
 struct student *Insert(struct student *head)
 {
 	struct student *stud;
+	char select;//是否继续添加学生信息 
+	do
+	{
 	stud = (struct student *)malloc(sizeof(	struct student));//动态申请内存 
 	if(NULL == stud)
 	{
@@ -41,10 +44,12 @@ struct student *Insert(struct student *head)
 			p1->next = p0;
 			p0->next = NULL;
 		}
-	}
-	printf("学号为 %d 的学生信息已经插入!\n",stud->number);
-	WriteToFile(head);
-	system("pause");
+		printf("\n学号为 %d 的学生信息已经插入!\n",stud->number);
+	} 
 	g_nNumber = g_nNumber + 1;
+	printf("\n\n是否要继续添加学生信息？  ");
+	scanf("%*c%c",&select); 
+	}while(select=='y' || select=='Y');
+	WriteToFile(head);
 	return head;
 }
