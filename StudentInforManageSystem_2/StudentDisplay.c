@@ -1,11 +1,11 @@
 #include "Predefine.h"
 
-/*´òÓ¡ËùÓĞÑ§ÉúĞÅÏ¢ */ 
+/*æ‰“å°æ‰€æœ‰å­¦ç”Ÿä¿¡æ¯ */ 
 void Output(struct student *head)
 {
 	struct student *p1;
 	p1 = head;
-	printf("Ñ§ºÅ	ĞÕÃû	ĞÔ±ğ	ÄêÁä	³É¼¨	Éí·İÖ¤ºÅÂë\n");
+	printf("å­¦å·	å§“å	æ€§åˆ«	å¹´é¾„	æˆç»©	èº«ä»½è¯å·ç \n");
 	while(NULL!= p1)
 	{
 		printf("%d\t%s\t%s\t%d\t%.2f\t%s\n",p1->number,p1->name,p1->gerden,p1->age,p1->mark,p1->ID);
@@ -13,4 +13,3 @@ void Output(struct student *head)
 	}
 	system("pause");
 }
-
