@@ -105,7 +105,7 @@ struct student *Delete_n(struct student *head)
 	}
 	p1 = head;
 	
-	while( p1 != NULL)  //遍历链表，按照学号进行查找 ，统计同名人数 
+	while( p1 != NULL)  //遍历链表，按照姓名进行查找 ，统计同名人数 
 	{
 		if(strcmp(name,p1->name) == 0) 
 			nNumber++;
@@ -114,12 +114,12 @@ struct student *Delete_n(struct student *head)
 	if(nNumber == 1)
 	{
 		p1 = head;
-		while((strcmp(name,p1->name)!=0) && p1->next!=NULL)  //遍历链表，按照学号进行查找 
+		while((strcmp(name,p1->name)!=0) && p1->next!=NULL)  //遍历链表，按照姓名进行查找 
 		{
 			p2=p1;
 			p1=p1->next;
 		}
-		if((strcmp(name,p1->name)==0))   //第一种情况：找到该学生 
+		if((strcmp(name,p1->name)==0))   //找到该学生 
 		{
 			if(p1==head)
 			head=p1->next;
@@ -134,6 +134,38 @@ struct student *Delete_n(struct student *head)
 	}
 	else if(nNumber > 1)
 		{
+			p1 = head;
+			while( p1 != NULL && nNumber >= 0)  //遍历链表，按照学号进行查找
+			{
+				if(strcmp(name,p1->name) == 0) 
+					{
+						nNumber--; 
+						printf("%d\t%s\t%s\t%d\t%.2f\t%s\n",p1->number,p1->name,p1->gerden,p1->age,p1->mark,p1->ID);
+					}
+				p1=p1->next;
+			}
+			int number;
+			printf("名字有雷同，请输入你要删除的学生学号："); 
+			scanf("%d",&number);
+			p1 = head;
+			while(p1->number!=number && p1->next!=NULL)  //遍历链表，按照学号进行查找 
+			{
+				p2=p1;
+				p1=p1->next;
+			}
+			if(p1->number==number)   //找到该学生 
+			{
+				if(p1==head)
+				head=p1->next;
+				else 
+				p2->next=p1->next;
+				free(p1);
+				printf("Ddelete : %d\n",number);
+				g_nNumber=g_nNumber-1;
+			}
+			system("pause");
+			return head;
+			/*
 			while(nNumber != 0)
 			{
 				p1 = head; 
@@ -156,8 +188,10 @@ struct student *Delete_n(struct student *head)
 			 } 
 			 system("pause");
 			 return head;
+			 */
+			 
 		}
-	else                //第二种情况：没有找到该学生
+	else                //没有找到该学生
 		printf("%s is not been found!\n",name);
 	system("pause");
 	return head;
@@ -169,6 +203,7 @@ struct student *Delete_s(struct student *head)
 	float score;
 	printf("please input score :");
 	scanf("%f",&score);
+	int number = 0;   //记录成绩相同的人数 
 	struct student *p1,*p2;
 	if(head==NULL)    //对指针进行判断，看是否为空 
 	{
@@ -176,22 +211,64 @@ struct student *Delete_s(struct student *head)
 		return head;
 	}
 	p1=head;
-	while(p1->mark!=score && p1->next!=NULL)  //遍历链表，按照学号进行查找 
+	while(p1 != NULL)  //遍历链表，按照成绩进行查找 
 	{
-		p2=p1;
+		if(p1->mark == score)
+			number++;
 		p1=p1->next;
 	}
-	if(p1->mark==score)   //第一种情况：找到该学生 
+	
+	if(number == 1)
 	{
+		p1 = head;
+		while(p1->mark != score)  //遍历链表，按照成绩进行查找 
+		{
+			p2=p1;
+			p1=p1->next;
+		}
 		if(p1==head)
-		head=p1->next;
+			head=p1->next;
 		else 
-		p2->next=p1->next;
+			p2->next=p1->next;
 		free(p1);
 		printf("Ddelete : %f\n",score);
 		g_nNumber=g_nNumber-1;
+		system("pause");
+		return head;
 	}
-	else                //第二种情况：没有找到该学生
+	else if(number > 1)
+	{
+		p1 = head;
+		while( p1 != NULL && number >= 0)  //遍历链表，按照学号进行查找
+		{
+			if(p1->mark == score) 
+				{
+					number--; 
+					printf("%d\t%s\t%s\t%d\t%.2f\t%s\n",p1->number,p1->name,p1->gerden,p1->age,p1->mark,p1->ID);
+				}
+			p1=p1->next;
+		}
+		int number;
+		printf("成绩有相同，请输入你要删除的学生学号："); 
+		scanf("%d",&number);
+		p1 = head;
+		while(p1->number!=number && p1->next!=NULL)  //遍历链表，按照学号进行查找 
+		{
+			p2=p1;
+			p1=p1->next;
+		}
+		if(p1->number==number)
+		{
+			if(p1==head)
+				head=p1->next;
+			else 
+				p2->next=p1->next;
+			free(p1);
+			printf("Ddelete : %d\n",number);
+			g_nNumber=g_nNumber-1;
+		}
+	} 
+	else                //没有找到该学生
 		printf("%f is not been found!\n",score);
 	system("pause");
 	return head;
@@ -201,46 +278,51 @@ struct student *Delete_s(struct student *head)
 struct student *Insert(struct student *head)
 {
 	struct student *stud;
-	stud=(	struct student *)malloc(sizeof(	struct student));//动态申请内存 
-	if(stud == NULL)
+	char select;//是否继续添加学生信息 
+	do
 	{
-		printf("申请内存出错！\n\a");
-		exit(0);
-	}
-	printf("请依次输入学号、姓名、性别、年龄、成绩、身份证号码\n");
-	scanf("%d%s%s%d%f%s",&stud->number,&stud->name,&stud->gerden,&stud->age,&stud->mark,&stud->ID);
-	struct student *p0,*p1,*p2;
-	p1=head;
-	p0=stud;
-	if(head==NULL)
-	{
-		head = p0;
-		p0->next=NULL;
-	}
-	else
-	{
-		while((p0->number>p1->number ) && (p1->next!=NULL))
+		stud = (struct student *)malloc(sizeof(	struct student));//动态申请内存 
+		if(NULL == stud)
 		{
-			p2=p1;
-			p1=p1->next;
+			printf("申请内存出错！\n\a");
+			exit(0);
 		}
-		if(p0->number <= p1->number)
+		printf("请依次输入学号、姓名、性别、年龄、成绩、身份证号码\n");
+		scanf("%d%s%s%d%f%s",&stud->number,&stud->name,&stud->gerden,&stud->age,&stud->mark,&stud->ID);
+		struct student *p0,*p1,*p2;
+		p1 = head;
+		p0 = stud;
+		if(NULL == head)
 		{
-			if(head==p1)
-				head=p0;
-			else
-				p2->next=p0;
-			p0->next=p1;
+			head = p0;
+			p0->next = NULL;
 		}
 		else
 		{
-			p1->next=p0;
-			p0->next=NULL;
-		}
-	}
-	printf("学号为 %d 的学生信息已经插入!\n",stud->number);
-	system("pause");
-	g_nNumber=g_nNumber+1;
+			while((p0->number>p1->number ) && (NULL != p1->next))
+			{
+				p2 = p1;
+				p1 = p1->next;
+			}
+			if(p0->number <= p1->number)
+			{
+				if(head==p1)
+					head = p0;
+				else
+					p2->next=p0;
+				p0->next = p1;
+			}
+			else
+			{
+				p1->next = p0;
+				p0->next = NULL;
+			}
+			printf("\n学号为 %d 的学生信息已经插入!\n",stud->number);
+		} 
+		g_nNumber = g_nNumber + 1;
+		printf("\n\n是否要继续添加学生信息？ ");
+		scanf("%*c%c",&select); 
+	}while(select=='y' || select=='Y');
 	return head;
 }
 
@@ -272,18 +354,19 @@ void Query_n(struct student *head)
 	struct student *p1;
 	p1=head;
 	char name[20];
+	int flag = 0;
 	printf("Please input the student name you want to query :");
 	scanf("%s",&name);
-	while((strcmp(name,p1->name)!=0) && p1->next!=NULL)
+	while(p1 != NULL)
 	{
+		if(strcmp(name,p1->name) == 0)
+			{
+				printf("%d\t%s\t%s\t%d\t%.2f\t%s\n",p1->number,p1->name,p1->gerden,p1->age,p1->mark,p1->ID);
+				flag = 1;
+			}
 		p1=p1->next;
 	}
-	if(strcmp(name,p1->name)==0)       //找到该学生，输出学生信息 
-	{
-		printf("学号	姓名	性别	年龄	成绩	身份证号码\n");
-		printf("%d\t%s\t%s\t%d\t%.2f\t%s\n",p1->number,p1->name,p1->gerden,p1->age,p1->mark,p1->ID);
-	}
-	else                     //未找到该学生，输出错误信息 
+	if(flag == 0)                     //未找到该学生，输出错误信息 
 		printf("%s is not been found!\n",name);
 	system("pause");
  }
@@ -293,19 +376,20 @@ void Query_s(struct student *head)
  {
 	struct student *p1;
 	p1=head;
+	int flag = 0;
 	float score;
 	printf("Please input the student score you want to query :");
 	scanf("%f",&score);
-	while(p1->mark!=score && p1->next!=NULL)
+	while(p1 != NULL)
 	{
+		if(p1->mark == score)
+		{
+			printf("%d\t%s\t%s\t%d\t%.2f\t%s\n",p1->number,p1->name,p1->gerden,p1->age,p1->mark,p1->ID);
+			flag = 1;
+		}
 		p1=p1->next;
 	}
-	if(p1->mark==score)       //找到该学生，输出学生信息 
-	{
-		printf("学号	姓名	性别	年龄	成绩	身份证号码\n");
-		printf("%d\t%s\t%s\t%d\t%.2f\t%s\n",p1->number,p1->name,p1->gerden,p1->age,p1->mark,p1->ID);
-	}
-	else                     //未找到该学生，输出错误信息 
+	if(flag == 0)                     //未找到该学生，输出错误信息 
 		printf(" Is not been found!\n");
 	system("pause");
  }
@@ -544,4 +628,3 @@ int main(int argc, char *argv[])
 	}while(selectkey != 7);
 	return 0;
 }
-
