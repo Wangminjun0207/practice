@@ -29,7 +29,7 @@
  
 struct student *ReadFromFile(struct student *head)
  {
- 	FILE *fp;
+ 	FILE *fp; 
  	struct student *p1,*p2;
  	if((fp = fopen("student_file.txt","rb"))==NULL) // 打开文件并且进行判断，是否打开 
  	{
