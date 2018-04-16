@@ -1,20 +1,20 @@
 #include "Predefine.h"
 extern void WriteToFile(struct student *head);
 extern int g_nNumber;
-/*æ’å…¥ä¸€ä¸ªå­¦ç”Ÿä¿¡æ¯ï¼Œè¿”å›ä¸€ä¸ªç»“æ„ä½“æŒ‡é’ˆ */ 
+/*²åÈëÒ»¸öÑ§ÉúĞÅÏ¢£¬·µ»ØÒ»¸ö½á¹¹ÌåÖ¸Õë */ 
 struct student *Insert(struct student *head)
 {
 	struct student *stud;
-	char select;//æ˜¯å¦ç»§ç»­æ·»åŠ å­¦ç”Ÿä¿¡æ¯ 
+	char select;//ÊÇ·ñ¼ÌĞøÌí¼ÓÑ§ÉúĞÅÏ¢ 
 	do
 	{
-		stud = (struct student *)malloc(sizeof(	struct student));//åŠ¨æ€ç”³è¯·å†…å­˜ 
+		stud = (struct student *)malloc(sizeof(	struct student));//¶¯Ì¬ÉêÇëÄÚ´æ 
 		if(NULL == stud)
 		{
-			printf("ç”³è¯·å†…å­˜å‡ºé”™ï¼\n\a");
+			printf("ÉêÇëÄÚ´æ³ö´í£¡\n\a");
 			exit(0);
 		}
-		printf("è¯·ä¾æ¬¡è¾“å…¥å­¦å·ã€å§“åã€æ€§åˆ«ã€å¹´é¾„ã€æˆç»©ã€èº«ä»½è¯å·ç \n");
+		printf("ÇëÒÀ´ÎÊäÈëÑ§ºÅ¡¢ĞÕÃû¡¢ĞÔ±ğ¡¢ÄêÁä¡¢³É¼¨¡¢Éí·İÖ¤ºÅÂë\n");
 		scanf("%d%s%s%d%f%s",&stud->number,&stud->name,&stud->gerden,&stud->age,&stud->mark,&stud->ID);
 		struct student *p0,*p1,*p2;
 		p1 = head;
@@ -44,12 +44,13 @@ struct student *Insert(struct student *head)
 				p1->next = p0;
 				p0->next = NULL;
 			}
-			printf("\nå­¦å·ä¸º %d çš„å­¦ç”Ÿä¿¡æ¯å·²ç»æ’å…¥!\n",stud->number);
+			printf("\nÑ§ºÅÎª %d µÄÑ§ÉúĞÅÏ¢ÒÑ¾­²åÈë!\n",stud->number);
 		} 
 		g_nNumber = g_nNumber + 1;
-		printf("\n\næ˜¯å¦è¦ç»§ç»­æ·»åŠ å­¦ç”Ÿä¿¡æ¯ï¼Ÿ   ");
+		printf("\n\nÊÇ·ñÒª¼ÌĞøÌí¼ÓÑ§ÉúĞÅÏ¢£¿ ");
 		scanf("%*c%c",&select); 
 	}while(select=='y' || select=='Y');
 	WriteToFile(head);
 	return head;
 }
+

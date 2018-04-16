@@ -105,3 +105,4 @@ struct student *Delete_s(struct student *head)
 	WriteToFile(head);
 	return head;
 }
+

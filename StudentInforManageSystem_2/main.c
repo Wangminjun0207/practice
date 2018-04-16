@@ -19,9 +19,10 @@ extern void Interface_2();
 extern void Exit();
 int g_nNumber=0;   //定义全局变量，存放学生人数 
 
-int main(int argc, char *argv[])
+int main()
 {
 	struct student *head,*head_1;
+	
 	int selectkey;
 	int selectkey_1;
 	head = NULL;
