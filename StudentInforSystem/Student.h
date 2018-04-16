@@ -3,11 +3,16 @@
 #include "Predefine.h"
 class Student
 {
+	friend class ScoreMgr;
 	public:
 		Student();
 		Student(unsigned int nNumber, char *pName, int nGender, char *pGrade);
-		~Student();
+		unsigned int GetStuNum(){return  m_nNumber;}
+		char *GetStuName(){return m_strName;}
+		int GetStuGerden(){return m_nGender;}
+		char *GetStuGrade(){return m_strGrade;}
 		int GetNumber(){return m_nNumber;}
+		~Student();
 	protected:
 		unsigned int m_nNumber;
 		char m_strName[12];

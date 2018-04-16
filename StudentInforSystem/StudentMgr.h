@@ -6,11 +6,11 @@ class StudentMgr
 {
 	public:
 		StudentMgr();
-		~StudentMgr();
-		int InitStuArray(); 
 		int PrintArr();
+		~StudentMgr();
+	
 	protected:
-		Student m_arrStuList[MAXSTUDENTNUMBER];
+	Student m_arrStuList[MAXSTUDENTNUMBER];
 };
 
 #endif

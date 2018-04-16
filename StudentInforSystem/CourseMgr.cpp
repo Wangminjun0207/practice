@@ -1,25 +1,34 @@
 #include "CourseMgr.h"
-
+#include <fstream> 
 CourseMgr::CourseMgr()
 {
-	InitCourArray();
-}
-CourseMgr::InitCourArray()
-{
+	char m_number[12];
+	char m_name[32];
+	char m_teacherName[10];
+	char m_teacherTel[15];
+	ifstream inputfile("coursefile.txt");
 	for(int i=0;i<MAXCOURSENUMBER;i++)
 	{
-		Course cour("1001","wmj","100","13830222203");
-		//memcpy(&m_arrStuList[i],&stu,sizeof(Student));
-	    m_arrCourList[i]=cour;	
-	}
-	return 0;
+		if(!inputfile)
+		{
+			cout<<"打开文件失败！"<<endl;
+			exit(0);	
+		}
+		inputfile>>m_number>>m_name>>m_teacherName>>m_teacherTel;
+		Course cour(m_number,m_name,m_teacherName,m_teacherTel);
+		m_arrCourList[i]=cour;
+	} 
+	inputfile.close();        
 }
+
 
 CourseMgr::PrintArr()
 {
+	cout<<"课程编号  课程名称      老师姓名   老师电话"<<endl;
 	for(int i=0;i<MAXCOURSENUMBER;i++)
-	{
-		std::cout<<m_arrCourList[i].GetTeachTel()<<std::endl;
+	{ 
+		cout<<"  "<<m_arrCourList[i].GetCourseNum()<<"	  "<<m_arrCourList[i].GetCourseName()<<"	"<<
+		      m_arrCourList[i].GetTeachName()<<"	  "<<m_arrCourList[i].GetTeachTel()<<endl;	
 	}
 	return 0;
 }

@@ -2,12 +2,12 @@
 #define COURSEMGR_H
 #include "Predefine.h"
 #include "Course.h"
+#include "StudentMgr.h"
 class CourseMgr
 {
 	public:
 		CourseMgr();
 		~CourseMgr();
-		int InitCourArray();
 		int PrintArr();
 	protected:
 		Course m_arrCourList[MAXCOURSENUMBER];
