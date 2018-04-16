@@ -13,7 +13,8 @@ int g_nNumber=0;   //定义全局变量，存放学生人数
 void Interface();
 void Interface_1();
 void Interface_2();
-
+void Interface_3();
+ 
  /*
  *定义一个结构体，命名为student
  *成员有学号、姓名、性别、年龄、成绩
@@ -53,7 +54,7 @@ struct student *Creat()
 	free(p1); 
 	return head;
  } 
- */
+*/
 
 /*按照学号删除一个学生信息，返回一个结构体指针 */ 
 struct student *Delete_N(struct student *head)
@@ -93,30 +94,69 @@ struct student *Delete_N(struct student *head)
 struct student *Delete_n(struct student *head)
 {
 	char name[20];
+	int nNumber = 0;  //记录同名的人数 
 	printf("please input name :");
 	scanf("%s",&name);
 	struct student *p1,*p2;
-	if(head==NULL)    //对指针进行判断，看是否为空 
+	if(head == NULL)   //对指针进行判断，看是否为空 
 	{
 		printf("\nThe list is NULL!\n");
 		return head;
 	}
-	p1=head;
-	while((strcmp(name,p1->name)!=0) && p1->next!=NULL)  //遍历链表，按照学号进行查找 
+	p1 = head;
+	
+	while( p1 != NULL)  //遍历链表，按照学号进行查找 ，统计同名人数 
 	{
-		p2=p1;
+		if(strcmp(name,p1->name) == 0) 
+			nNumber++;
 		p1=p1->next;
 	}
-	if((strcmp(name,p1->name)==0))   //第一种情况：找到该学生 
+	if(nNumber == 1)
 	{
-		if(p1==head)
-		head=p1->next;
-		else 
-		p2->next=p1->next;
-		free(p1);
-		printf("Ddelete : %s\n",name);
-		g_nNumber=g_nNumber-1;
+		p1 = head;
+		while((strcmp(name,p1->name)!=0) && p1->next!=NULL)  //遍历链表，按照学号进行查找 
+		{
+			p2=p1;
+			p1=p1->next;
+		}
+		if((strcmp(name,p1->name)==0))   //第一种情况：找到该学生 
+		{
+			if(p1==head)
+			head=p1->next;
+			else 
+			p2->next=p1->next;
+			free(p1);
+			printf("Ddelete : %s\n",name);
+			g_nNumber=g_nNumber-1;
+		}
+		system("pause");
+		return head;
 	}
+	else if(nNumber > 1)
+		{
+			while(nNumber != 0)
+			{
+				p1 = head; 
+				while((strcmp(name,p1->name)!=0) && p1->next!=NULL)  //遍历链表，按照学号进行查找 
+				{
+					p2=p1;
+					p1=p1->next;
+				}
+				if((strcmp(name,p1->name)==0))   //第一种情况：找到该学生 
+				{
+					if(p1==head)
+					head=p1->next;
+					else 
+					p2->next=p1->next;
+					free(p1);
+					printf("Ddelete : %s\n",name);
+					g_nNumber=g_nNumber-1;
+				}
+				nNumber--;
+			 } 
+			 system("pause");
+			 return head;
+		}
 	else                //第二种情况：没有找到该学生
 		printf("%s is not been found!\n",name);
 	system("pause");
@@ -282,17 +322,48 @@ struct student *Editor(struct student *head)
 	{
 		p1=p1->next;
 	}
+	
 	if(p1->number==num)
+	{
+		Interface_3(); 
+		int selectkey;
+		scanf("%d",&selectkey);
+		switch(selectkey)
 		{
-			printf("请依次输入学号、姓名、性别、年龄、成绩、身份证号码\n");
-			scanf("%d%s%s%d%f%s",&p1->number,&p1->name,&p1->gerden,&p1->age,&p1->mark,&p1->ID);
-			printf("The %d is  been editor!\n",num);
+			case 1:printf("请输入学号：");
+				   scanf("%d",&p1->number); 
+				   break; 
+			case 2:printf("请输入姓名：");
+				   scanf("%s",&p1->name);
+				   break;
+			case 3:printf("请输入性别：");
+				   scanf("%s",&p1->gerden);
+				   break;
+			case 4:printf("请输入年龄：");
+				   scanf("%d",&p1->age);
+				   break;
+			case 5:printf("请输入成绩：");
+				   scanf("%f",&p1->mark);
+				   break;
+			case 6:	printf("请依次输入学号、姓名、性别、年龄、成绩、身份证号码\n");
+					scanf("%d%s%s%d%f%s",&p1->number,&p1->name,&p1->gerden,&p1->age,&p1->mark,&p1->ID);
+					break;
+			case 7:printf("请输入身份证号码：");
+				   scanf("%s%s%d%f%s",&p1->ID);
+				   break;
+			case 0:printf("取消修改！\n"); 
+				   break;
 		}
+		if(selectkey != 0)
+		printf("The %d is  been editor!\n",num);
+	}
 	else
 		printf("The %d is not been found!\n",num);
 	system("pause");
 	return head;
 }
+
+
 
 /*菜单界面，有以下六种功能*/ 
 void Interface()
@@ -327,6 +398,19 @@ void Interface_2()
 	puts("请选择需求：");
  }
  
+  /*二级菜单界面，有以下八种功能*/ 
+ void Interface_3()
+ {
+ 	 	puts("1.修改学号");
+		puts("2.修改姓名");
+		puts("3.修改性别");
+		puts("4.修改年龄");
+		puts("5.修改成绩");
+		puts("6.修改全部");
+		puts("7.修改身份证号码");
+		puts("0.不做修改");
+ }
+
 /*打印所有学生信息 */ 
 void Output(struct student *head)
 {
