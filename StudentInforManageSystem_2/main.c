@@ -16,6 +16,7 @@ extern void Statistic_a(struct student *head);
 extern void Interface();
 extern void Interface_1();
 extern void Interface_2();
+extern void Interface_3();
 extern void Exit();
 int g_nNumber=0;   //定义全局变量，存放学生人数 
 
