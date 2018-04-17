@@ -30,7 +30,7 @@ struct student *Delete_N(struct student *head)
 		g_nNumber=g_nNumber-1;
 	}
 	else                //第二种情况：没有找到该学生
-		printf("%d is not been found!\n");
+		printf("%d is not been found!\n",num);
 	system("pause");
 	return head;
 }

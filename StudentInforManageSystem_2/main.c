@@ -46,7 +46,7 @@ int main()
 						case 3:system("cls");printf("按照成绩查询\n\n");Query_s(head);break;
 				   } 
 				   break;
-			case 3:system("cls");printf("编辑学生\n\n");head_1=Editor(head);break;
+			case 3:system("cls");printf("编辑学生\n\n");head_1=Editor(head);WriteToFile(head);break;
 			case 4:system("cls");printf("删除学生\n\n");			   
 				   Interface_1();
 				   scanf("%d",&selectkey_1);
@@ -56,6 +56,7 @@ int main()
 					    case 2:system("cls");printf("按照姓名删除\n\n");head_1=Delete_n(head);break;
 						case 3:system("cls");printf("按照成绩删除\n\n");head_1=Delete_s(head);break;
 				   } 
+				   WriteToFile(head); 
 				   break;
 			case 5:system("cls");printf("打印全部\n\n");Output(head);break;
 			case 6:system("cls");printf("人数统计\n\n");
