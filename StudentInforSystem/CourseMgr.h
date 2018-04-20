@@ -9,6 +9,7 @@ class CourseMgr
 		CourseMgr();
 		~CourseMgr();
 		int PrintArr();
+		Course GetCourse(int i){return m_arrCourList[i];}
 	protected:
 		Course m_arrCourList[MAXCOURSENUMBER];
 };

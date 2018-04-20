@@ -17,7 +17,7 @@ class Student
 		unsigned int m_nNumber;
 		char m_strName[12];
 		int m_nGender;
-		char m_strGrade[30];
+		char m_strGrade[25];
 };
 
 #endif

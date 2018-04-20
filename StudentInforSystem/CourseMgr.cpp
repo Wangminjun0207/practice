@@ -18,7 +18,7 @@ CourseMgr::CourseMgr()
 		Course cour(m_number,m_name,m_teacherName,m_teacherTel);
 		m_arrCourList[i]=cour;
 	} 
-	inputfile.close();        
+	inputfile.close(); 
 }
 
 

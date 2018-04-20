@@ -10,7 +10,9 @@
 
 int main(int argc, char** argv)
 {
-	ComposeMgr cmgr;
-	cmgr.PrintArr();
+	StudentMgr smgr;			//给所有同学初始化 
+	CourseMgr  coumgr;			//给所有课程初始化		 
+	ComposeMgr cmgr;           //定义一个综合管理类对象 
+	cmgr.Manage();
 	return 0;
 }

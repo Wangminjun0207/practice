@@ -7,14 +7,17 @@ class Score
 {
 	public:
 		Score();
-        Score(Student &stu,Course &cour, float sco);
+        Score(Student &stu,Course &cour, float score);
 		~Score();
 		Student GetStudent(){return m_student;}
-		Course GetCourse(){return m_course;}
-		float GetScore(){return m_score;}
+		Course GetCourse(int i){return m_course[i];}
+		float GetScore(int i){return m_score[i];}
+		void SetStudent(Student &stu){memcpy(&m_student,&stu,sizeof(Student));}
+		void SetCourse(Course &course,int i){ memcpy(&m_course[i] ,&course,sizeof(Course));}
+		void SetScore(float score, int i){m_score[i] = score;}
 	protected:
 		Student  m_student;
-		Course  m_course;  
-		float  m_score;    
+		Course  m_course[MAXCOURSENUMBER];
+		float  m_score[MAXCOURSENUMBER];    
 };
 #endif

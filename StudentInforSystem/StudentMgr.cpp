@@ -4,34 +4,32 @@
 
 StudentMgr::StudentMgr()
 {
-	int nGer;
-	ofstream outfile("studentfile.txt");
-	if(!outfile)
-	{
-		cout<<"打开文件失败！"<<endl;
-		exit(0);	
-	}
+	unsigned int number;
+	char name[12];
+	int gerden;
+	char grade[25];
+	ifstream inputfile("studentfile.txt");
 	for(int i=0;i<MAXSTUDENTNUMBER;i++)
 	{
-		if(i%2==0)
-			nGer = 1;// 1 代表男生 
-		else
-			nGer = 0;// 0 代表女生 
-		Student stu(001+i,"student",nGer,"计算机类2017-03班");
+		if(!inputfile)
+		{
+			cout<<"打开文件失败！"<<endl;
+			exit(0);	
+		}
+		inputfile>>number>>name>>gerden>>grade;
+		Student stu(number,name,gerden,grade);
 		m_arrStuList[i]=stu;
-		outfile<<m_arrStuList[i].GetNumber()<<" "<<m_arrStuList[i].GetStuName()<<i<<" "<<
-		m_arrStuList[i].GetStuGerden()<<" "<<m_arrStuList[i].GetStuGrade()<<endl;	
 	} 
-	outfile.close();		
+	inputfile.close(); 	
 }
 
 
 int StudentMgr::PrintArr()
 {
 	for(int i=0;i<MAXSTUDENTNUMBER;i++)
-	{
-		cout<<m_arrStuList[i].GetNumber()<<" "<<m_arrStuList[i].GetStuName()<<i<<" "<<
-			  m_arrStuList[i].GetStuGerden()<<" "<<m_arrStuList[i].GetStuGrade()<<endl;
+	{ 
+		cout<<setw(5)<<m_arrStuList[i].GetNumber()<<setw(16)<<m_arrStuList[i].GetStuName()<<i<<setw(5)<<
+			  m_arrStuList[i].GetStuGerden()<<setw(30)<<m_arrStuList[i].GetStuGrade()<<endl;
 	}
 }
 

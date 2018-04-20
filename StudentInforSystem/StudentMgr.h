@@ -7,10 +7,10 @@ class StudentMgr
 	public:
 		StudentMgr();
 		int PrintArr();
+		Student GetStudent(int i) {return m_arrStuList[i];}
 		~StudentMgr();
-	
 	protected:
-	Student m_arrStuList[MAXSTUDENTNUMBER];
+		Student m_arrStuList[MAXSTUDENTNUMBER];
 };
 
 #endif
