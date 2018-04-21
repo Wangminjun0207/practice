@@ -26,7 +26,9 @@
  }
  
  
- 
+/*
+ *如果文件本来就为空，读的话会出现问题
+ */ 
 struct student *ReadFromFile(struct student *head)
  {
  	FILE *fp; 
