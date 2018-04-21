@@ -6,7 +6,7 @@ void Interface_3();
 void Interface_4();
 void AnalyzeOne();
 void InterfaceEnd();
-//ScoreMgr scoMgr;
+ScoreMgr scoMgr;
 
 
 ComposeMgr::ComposeMgr()
