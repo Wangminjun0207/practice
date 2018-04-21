@@ -6,7 +6,7 @@ void Interface_3();
 void Interface_4();
 void AnalyzeOne();
 void InterfaceEnd();
-ScoreMgr scoMgr;
+//ScoreMgr scoMgr;
 
 
 ComposeMgr::ComposeMgr()
@@ -144,6 +144,9 @@ void AnalyzeOne()
 	/*
 	 *为什么要在每次使用成绩数组的时候再次初始化 
 	 *scoMgr析构还是什么原因 
+	 *是因为AnalyzeOne这个函数是全局的函数，不是定义在ComposeMgr类里面的，所以你在访问 scoMgr的时候，其实是访问的这个文件开头定义的scoMgr，并不是ComposeMgr类的那个成员。所以，如果你一定是需要访问ComposeMgr的类成员scoMgr，
+	 *就需要把这个AnalyzeOne做为类成员函数，或者定义一个全局指针指向这个类成员的scoMgr，或者把scoMgr定义成一个静态成员，用一个静态方法全局调用。
+	 *add by lottiwang@2018/04/21 
 	 */ 
 	int selectkey_1;
    	do
