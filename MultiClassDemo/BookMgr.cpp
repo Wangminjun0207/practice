@@ -42,19 +42,21 @@ int BookMgr::BorrowBook(int nBookId,int nUserid)
 			{
 				bklist[i].SetBookStatus(1);
 				bklist[i].SetBookUserID(nUserid);
-				std::cout << "书籍ID：" << bklist[i].GetBookId() << " 书籍名称: " <<  bklist[i].GetBookName() <<  "被用户 " << nUserid << "借出，当前状态: " << bklist[i].GetBookStatus()  << std::endl;
+				std::cout << "书籍ID：" << bklist[i].GetBookId() << " 书籍名称: " <<  bklist[i].GetBookName() <<
+				           "被用户 " << nUserid << "借出，当前状态: " << bklist[i].GetBookStatus()  << std::endl;
 				
 			}
 			else
 			{
-				std::cout << "书籍ID：" << bklist[i].GetBookId() << " 书籍名称: " <<  bklist[i].GetBookName() <<   "不能被用户" << nUserid << "借出，当前借用户: " << bklist[i].GetBookUserID()  << std::endl;
+				std::cout << "书籍ID：" << bklist[i].GetBookId() << " 书籍名称: " <<  bklist[i].GetBookName() <<
+				          "不能被用户" << nUserid << "借出，当前借用户: " << bklist[i].GetBookUserID()  << std::endl;
 			}
 			break;
 			
 		}	
 		
 	}
-	if (i > 100)
+	if (i >= 100)
 	{
 		std::cout << "未找到ID：" << nBookId << " 的书籍"<< std::endl;
 	}
