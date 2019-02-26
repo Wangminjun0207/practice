@@ -76,27 +76,31 @@ ComposeMgr::Manage()
 //一级菜单，有以下七个功能 
 void Interface_1()
 {
-	cout<<"\t1.查询学生成绩"<<endl;
-	cout<<"\t2.输出学生信息"<<endl;
-	cout<<"\t3.分析单科成绩"<<endl;
-	cout<<"\t4.查询学生信息"<<endl;
-	cout<<"\t5.输出所有成绩"<<endl;
-	cout<<"\t6.输出单科成绩"<<endl;
-	cout<<"\t0.退出管理系统"<<endl;
-	cout<<"\t请选择需要的功能：";
+	cout<<"===============================" << endl << endl;
+	cout<<"    \t1.查询学生成绩"<<endl;
+	cout<<"    \t2.输出学生信息"<<endl;
+	cout<<"    \t3.分析单科成绩"<<endl;
+	cout<<"    \t4.查询学生信息"<<endl;
+	cout<<"    \t5.输出所有成绩"<<endl;
+	cout<<"    \t6.输出单科成绩"<<endl;
+	cout<<"    \t0.退出管理系统"<<endl << endl;
+	cout<<"==============================="<<endl;
+	cout<<"请选择需要的功能：";
 }
 
 
 //二级菜单，有以下六种功能 
 void Interface_2()
 {
-	cout<<"\t1.输出最高分"<<endl;
-	cout<<"\t2.输出最低分"<<endl;
-	cout<<"\t3.输出平均分"<<endl;
-	cout<<"\t4.输出及格人数"<<endl;
-	cout<<"\t5.输出挂科人数"<<endl;
-	cout<<"\t0.返回上级菜单"<<endl;
-	cout<<"\t请选择需要的功能：";
+	cout<<"===============================" << endl << endl;
+	cout<<"        1.输出最高分"<<endl;
+	cout<<"        2.输出最低分"<<endl;
+	cout<<"        3.输出平均分"<<endl;
+	cout<<"        4.输出及格人数"<<endl;
+	cout<<"        5.输出挂科人数"<<endl;
+	cout<<"        0.返回上级菜单"<<endl << endl;
+	cout<<"===============================" << endl;
+	cout<<"请选择需要的功能：";
  }
 
 
@@ -106,16 +110,18 @@ void Interface_2()
 */ 
 void Interface_3()
 {
-	cout<<"\t1.线性代数"<<endl;
-	cout<<"\t2.离散数学"<<endl;
-	cout<<"\t3.高等数学"<<endl;
-	cout<<"\t4.面向对象"<<endl;
-	cout<<"\t5.大学英语"<<endl;
-	cout<<"\t6.大学物理"<<endl;
-	cout<<"\t7.大学体育"<<endl;
-	cout<<"\t8.近现代史"<<endl;
-	cout<<"\t0.返回上级菜单"<<endl;
-	cout<<"\t请选择需要的功能：";
+	cout<<"======================" << endl << endl;
+	cout<<"     1.线性代数"<<endl;
+	cout<<"     2.离散数学"<<endl;
+	cout<<"     3.高等数学"<<endl;
+	cout<<"     4.面向对象"<<endl;
+	cout<<"     5.大学英语"<<endl;
+	cout<<"     6.大学物理"<<endl;
+	cout<<"     7.大学体育"<<endl;
+	cout<<"     8.近现代史"<<endl;
+	cout<<"     0.返回上级菜单"<<endl << endl;
+	cout<<"======================" << endl;
+	cout<<"请选择需要的功能：";
  }
  
  
@@ -125,14 +131,16 @@ void Interface_3()
 */ 
 void Interface_4()
 {
-	cout<<"\t1.线性代数"<<endl;
-	cout<<"\t2.离散数学"<<endl;
-	cout<<"\t3.高等数学"<<endl;
-	cout<<"\t4.面向对象"<<endl;
-	cout<<"\t5.大学英语"<<endl;
-	cout<<"\t6.大学物理"<<endl;
-	cout<<"\t7.大学体育"<<endl;
-	cout<<"\t8.近现代史"<<endl;
+	cout<<"========================" << endl << endl;
+	cout<<"      1.线性代数"<<endl;
+	cout<<"      2.离散数学"<<endl;
+	cout<<"      3.高等数学"<<endl;
+	cout<<"      4.面向对象"<<endl;
+	cout<<"      5.大学英语"<<endl;
+	cout<<"      6.大学物理"<<endl;
+	cout<<"      7.大学体育"<<endl;
+	cout<<"      8.近现代史"<<endl << endl;
+	cout<<"========================" << endl;
  }
 void InterfaceEnd()
 {

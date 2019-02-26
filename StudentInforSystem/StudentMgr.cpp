@@ -23,7 +23,6 @@ StudentMgr::StudentMgr()
 	inputfile.close(); 	
 }
 
-
 int StudentMgr::PrintArr()
 {
 	for(int i=0;i<MAXSTUDENTNUMBER;i++)

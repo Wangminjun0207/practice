@@ -12,5 +12,4 @@ class StudentMgr
 	protected:
 		Student m_arrStuList[MAXSTUDENTNUMBER];
 };
-
 #endif

@@ -14,7 +14,6 @@ Student::Student(unsigned int nNumber, char *pName, int nGender, char *pGrade)
 
 Student::~Student()
 {
-	
 }
 
 
