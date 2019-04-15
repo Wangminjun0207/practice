@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-int main()
+int main(int argc, char * argv[])
 {
      float X1,Y1,X2,Y2,s;
      do

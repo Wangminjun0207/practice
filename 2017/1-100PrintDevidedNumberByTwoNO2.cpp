@@ -7,7 +7,7 @@ int main()
     for (i=1;i<=50;i++)
 	if (i%3==0 && i%2!=0 && i%10!=7)
 	{
-	c=c*i;
-	printf("i=%ld\n,c=%ld\n",i,c);
+		c=c*i;
+		printf("i=%ld\n,c=%ld\n",i,c);
 	}
 }
