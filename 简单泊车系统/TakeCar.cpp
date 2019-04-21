@@ -6,7 +6,7 @@
 extern void WriteToFile(struct Car *head);
 extern void WriteToFile_1(struct Car *car);
 extern int g_nCarNumber;
-
+ 
 /*按照车牌号取车，返回一个结构体指针 */ 
 struct Car *TakeCar(struct Car *head)
 {
