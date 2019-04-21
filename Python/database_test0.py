@@ -4,7 +4,7 @@
 import pymysql
 
 # 打开数据库连接
-db = pymysql.connect(host="localhost",user="root",password="123456",db="wmj",charset="utf8")
+db = pymysql.connect(host="localhost",user="root",password="wmj123456",db="wmj",charset="utf8")
 # 使用cursor()方法获取操作游标
 cursor = db.cursor()
 # 数据列表
