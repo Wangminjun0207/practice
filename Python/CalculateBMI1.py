@@ -1,6 +1,6 @@
 #CalBMIv1.py
 height  = eval(input("请输入身高（米）:  "))
-weight  = eval(input("请输入体重（千克）:  "))s
+weight  = eval(input("请输入体重（千克）:  "))
 bmi = weight / pow(height, 2)
 print("BMI 的数值为: {:.2f}".format(bmi))
 who = ""
